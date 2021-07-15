@@ -6,7 +6,7 @@ function App() {
   const [getMessage, setGetMessage] = useState({})
 
   useEffect(() => {
-    axios.get('https://time2type.herokuapp.com/flask/hello').then(response => {
+    axios.get('https://turbotype.herokuapp.com/flask/hello').then(response => {
       console.log("SUCCESS", response)
       setGetMessage(response)
     }).catch(error => {
