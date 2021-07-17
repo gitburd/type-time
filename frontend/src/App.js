@@ -4,11 +4,12 @@ import './App.css';
 
 function App() {
   const [getMessage, setGetMessage] = useState({})
+  const [text, setText] = useState({})
 
   useEffect(() => {
-    axios.get('https://turbotype.herokuapp.com/flask/hello').then(response => {
+    axios.get('https://turbotype.herokuapp.com/api/text').then(response => {
       console.log("SUCCESS", response)
-      setGetMessage(response)
+      setText(response)
     }).catch(error => {
       console.log(error)
     })
@@ -17,8 +18,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>React + Flask App</p>
-        <div>{getMessage.status === 200 ?
-          <h3>{getMessage.data.message}</h3>
+        <div>{text.status === 200 ?
+          <h3>{text.data && text.data.length > 0 && (
+            text.data.map((t) => <p key={t.id}>{t.content}</p>)
+          )}</h3>
           :
           <h3>LOADING</h3>}</div>
       </header>
