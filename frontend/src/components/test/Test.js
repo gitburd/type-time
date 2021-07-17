@@ -1,0 +1,14 @@
+import React from 'react'
+import TestText from './TestText'
+import UserInput from './UserInput'
+import './Test.css'
+const Test = () => {
+    return (
+        <div className="test">
+            <TestText />
+            <UserInput />
+        </div>
+    )
+}
+
+export default Test
