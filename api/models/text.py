@@ -7,3 +7,4 @@ class Text(db.Model):
     content = db.Column(db.String)
     category = db.Column(db.String)
     author = db.Column(db.String)
+    tag = db.Column(db.String)
