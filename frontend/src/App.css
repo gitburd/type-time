@@ -4,13 +4,17 @@ main {
   margin-top: 30px;
 }
 
-.tools{
-  display: flex;
-  justify-content: space-around;
-}
 
 .test{
   display: block;
   margin: 3em;
+}
+
+.container {
+  background-color: #f0db4f;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  /* width: 700px; */
+  /* max-width: 90%; */
 }
 

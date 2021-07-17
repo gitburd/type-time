@@ -1,4 +1,56 @@
 .card{
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    padding: 1em;
+    /* box-shadow: rgba(50, 50, 93, 0.2) 0px 50px 100px -20px, rgba(0, 0, 0, 0.20) 0px 30px 60px -30px, rgba(96, 96, 96, 0.25) 0px -2px 6px 0px inset; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(96, 96, 96, 0.35) 0px -2px 6px 0px inset;
+    padding: 2em 1em 2.5em;
+    border-radius: 0.5rem;
+    background-color: #f2e273;
+    margin-top: 2em;
+}
+
+.quote-input{
+    display:block;
+    background-color: white;
+    border: 2px solid #a1922e;
+    outline: none;
+    width: 90%;
+    height: 23vh;
+    margin: 1em auto 0;
+    resize: none;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0.5rem;
+    overflow:scroll;
+}
+
+.quote-display{
+    display:block;
+    outline: none;
+    width: 90%;
+    margin: 0 auto 1em;
+    padding: 0 1rem;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.quote-display:hover{
+    cursor:default;
+}
+
+.quote-input:focus {
+    border-color: black;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+.test-container{
+    margin-top:2em;
 }

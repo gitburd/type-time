@@ -4,7 +4,7 @@ import UserInput from './UserInput'
 import './Test.css'
 const Test = () => {
     return (
-        <div className="test">
+        <div className="card">
             <TestText />
             <UserInput />
         </div>

@@ -12,18 +12,19 @@ import Timer from "./components/tools/Timer"
 import Help from "./components/tools/Help"
 import WPM from "./components/tools/WPM"
 import History from './components/history/History';
+import Tools from "./components/tools/Tools"
 
 function App() {
   const [text, setText] = useState({})
 
-  useEffect(() => {
-    axios.get('https://turbotype.herokuapp.com/api/text').then(response => {
-      console.log("SUCCESS", response)
-      setText(response)
-    }).catch(error => {
-      console.log(error)
-    })
-  }, [])
+  // useEffect(() => {
+  //   axios.get('https://turbotype.herokuapp.com/api/text').then(response => {
+  //     console.log("SUCCESS", response)
+  //     setText(response)
+  //   }).catch(error => {
+  //     console.log(error)
+  //   })
+  // }, [])
   return (
     <Router>
       <div className="App">
@@ -31,11 +32,7 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/">
-              <section className="tools">
-                <Help />
-                <Timer />
-                <WPM />
-              </section>
+              <Tools />
               <Test />
               {/* <div>{text.status === 200 ?
                 <h3>{text.data && text.data.length > 0 && (

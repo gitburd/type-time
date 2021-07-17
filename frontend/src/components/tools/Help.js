@@ -1,8 +1,9 @@
 import React from 'react'
+import "./Tool.css"
 
 const Help = () => {
     return (
-        <div>
+        <div className="tool-card">
             <h1>Help</h1>
         </div>
     )

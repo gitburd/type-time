@@ -1,9 +1,10 @@
 import React from 'react'
+import "./Tool.css"
 
 const Timer = () => {
     return (
         <div>
-            <h1>Timer!</h1>
+            <h1>timer</h1>
         </div>
     )
 }
