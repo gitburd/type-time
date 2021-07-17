@@ -10,3 +10,110 @@
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
 }
+
+.status{
+    display: block;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    line-height: 130px;
+    background: #171515;
+    border-radius: 50%;
+    font-size: 80px;
+    font-family:sans-serif;
+    font-weight:bold;
+    margin:0 auto;
+    box-shadow: 0 0 6px var(--dark-grey);
+}
+
+.status-green {
+    color: #5f3;
+    text-shadow: 0 0 15px #1a9900;
+    border: 2px solid #5f3;
+}
+
+.timer {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow-timer {
+    width: 2em;
+    height: 2em;
+    font-size: 4em;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.glow-timer:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.glow-timer:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    opacity: 0.95;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.timer-container{
+    position: relative;
+    /* flex-direction:column; */
+}
+
+.timer-container button{
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    font-weight: bold;
+    font-size:24px;
+}
+
+.timer-container-footer{
+    position: absolute;
+    bottom:.5em;
+    font-size:1.2em;
+    font-weight:bold;
+    display: flex;
+    justify-content:space-between;
+    width:100%;
+}

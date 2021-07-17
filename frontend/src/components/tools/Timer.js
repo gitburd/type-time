@@ -36,10 +36,14 @@ const Timer = () => {
     }
 
     return (
-        <div className="timer" id="timer">
-            {timer - time}
-            <button onClick={startTimer}>GO!</button>
-            <button onClick={onResetClick}>RESET!</button>
+        <div className="timer-container">
+            <div className="timer glow-timer">
+                {timer - time}
+            </div>
+            <div className="timer-container-footer">
+                <button onClick={startTimer}>GO!</button>
+                <button onClick={onResetClick}>✖️</button>
+            </div>
         </div>
     )
 }
