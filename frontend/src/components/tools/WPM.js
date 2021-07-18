@@ -11,7 +11,6 @@ const WPM = () => {
         timer: state.test.timer,
         time: state.test.time
     }), shallowEqual);
-    console.log("input?", input.length)
 
     return (
         <div className="tool-card">

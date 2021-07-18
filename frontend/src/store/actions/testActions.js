@@ -10,13 +10,9 @@ export const setTimer = (timer) => {
     }
 }
 
-export const startTimer = () => {
+export const setTime = (time) => {
     return (dispatch) => {
-        let startTime = new Date()
-        setInterval(() => {
-            let newTime = Math.floor((new Date() - startTime) / 1000)
-            dispatch({ type: 'SET_TIME', time: newTime })
-        }, 1000)
+        dispatch({ type: 'SET_TIME', time })
     }
 }
 

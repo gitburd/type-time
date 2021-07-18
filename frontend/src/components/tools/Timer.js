@@ -1,51 +1,46 @@
 import React, { useState } from 'react'
 import "./Tool.css"
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { startTimer, resetTime } from '../../store/actions/testActions';
+import useInterval from './useInterval'
+import { setTime } from '../../store/actions/testActions'
 
 const Timer = () => {
     const {
-        timer,
-        time
+        timer
     } = useSelector(state => ({
-        timer: state.test.timer,
-        time: state.test.time
+        timer: state.test.timer
     }), shallowEqual);
+
+    const [count, setCount] = useState(0);
+    const delay = 1000;
+    const [isRunning, setIsRunning] = useState(false);
     const dispatch = useDispatch();
-    // const onGoClick = () => {
-    //     console.log("click")
-    //     dispatch(startTimer(timer))
-    // }
 
-    const onResetClick = () => {
-        console.log("click")
-        dispatch(resetTime())
+    useInterval(() => {
+        setCount(count + 1);
+        dispatch(setTime((count + 1)))
+    }, isRunning && count < timer ? delay : null);
+
+    function handleStopTimer() {
+        setIsRunning(false);
+        setCount(0);
     }
 
-    const startTimer = () => {
-        let startTime = new Date()
-        let counter = 0;
-        let interv = setInterval(() => {
-            if (counter === timer - 1) {
-                clearInterval(interv)
-            }
-            let newTime = Math.floor((new Date() - startTime) / 1000)
-            counter++;
-            dispatch({ type: 'SET_TIME', time: newTime })
-        }, 1000)
+    function handleStartTimer() {
+        setIsRunning(true);
+        setCount(0);
     }
-
     return (
         <div className="timer-container">
             <div className="timer glow-timer">
-                {timer - time}
+                {timer - count}
             </div>
             <div className="timer-container-footer">
-                <button onClick={startTimer}>GO!</button>
-                <button onClick={onResetClick}>✖️</button>
+                <button onClick={handleStartTimer}>GO!</button>
+                <button onClick={handleStopTimer}>✖️</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default Timer
