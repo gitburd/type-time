@@ -1,22 +1,22 @@
 import React, { useEffect } from 'react'
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { getText } from '../../store/actions/testActions'
+import { getRandomText } from '../../store/actions/testActions'
 
 const TestText = () => {
     const {
-        input
+        input,
+        text
     } = useSelector(state => ({
-        input: state.test.input
+        input: state.test.input,
+        text: state.test.text
     }), shallowEqual);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getText())
+        dispatch(getRandomText())
     }, [])
 
-
-
-    const text = { content: 'Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. hvj kubiubiu' }
+    // const text = { content: 'Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. hvj kubiubiu' }
     const textLetters = text.content.split("")
     const inputLetters = input.split("")
     return (

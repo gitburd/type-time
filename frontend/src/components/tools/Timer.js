@@ -13,7 +13,7 @@ const Timer = () => {
 
     const [count, setCount] = useState(0);
     const delay = 1000;
-    const [isRunning, setIsRunning] = useState(false);
+    const [isRunning, setIsRunning] = useState(true);
     const dispatch = useDispatch();
 
     useInterval(() => {

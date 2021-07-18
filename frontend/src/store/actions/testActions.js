@@ -24,12 +24,12 @@ export const resetTime = () => {
     }
 }
 
-export const getText = () => {
+export const getRandomText = () => {
     return (dispatch) => {
         axios.get('https://turbotype.herokuapp.com/api/text/random')
             .then(response => {
                 console.log("SUCCESS", response)
-                dispatch({ type: 'SET_TEXT', text: response })
+                dispatch({ type: 'SET_TEXT', text: response.data })
             }).catch(error => {
                 console.log(error)
             })
