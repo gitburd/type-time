@@ -1,5 +1,6 @@
-import React from 'react'
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import { getText } from '../../store/actions/testActions'
 
 const TestText = () => {
     const {
@@ -7,6 +8,13 @@ const TestText = () => {
     } = useSelector(state => ({
         input: state.test.input
     }), shallowEqual);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getText())
+    }, [])
+
+
 
     const text = { content: 'Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. hvj kubiubiu' }
     const textLetters = text.content.split("")

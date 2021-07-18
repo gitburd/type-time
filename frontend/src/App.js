@@ -25,6 +25,7 @@ function App() {
   //     console.log(error)
   //   })
   // }, [])
+
   return (
     <Router>
       <div className="App">
@@ -34,12 +35,6 @@ function App() {
             <Route exact path="/">
               <Tools />
               <Test />
-              {/* <div>{text.status === 200 ?
-                <h3>{text.data && text.data.length > 0 && (
-                  text.data.map((t) => <p key={t.id}>{t.content}</p>)
-                )}</h3>
-                :
-                <h3>LOADING</h3>}</div> */}
             </Route>
             <Route path="/history">
               <History />

@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const setUserInput = (input) => {
     return (dispatch) => {
         dispatch({ type: 'SET_USERINPUT', input })
@@ -19,5 +21,17 @@ export const setTime = (time) => {
 export const resetTime = () => {
     return (dispatch) => {
         dispatch({ type: 'RESET_TIME' })
+    }
+}
+
+export const getText = () => {
+    return (dispatch) => {
+        axios.get('https://turbotype.herokuapp.com/api/text')
+            .then(response => {
+                console.log("SUCCESS", response)
+                dispatch({ type: 'SET_TEXT', text: response })
+            }).catch(error => {
+                console.log(error)
+            })
     }
 }

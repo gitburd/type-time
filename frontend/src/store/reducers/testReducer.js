@@ -4,7 +4,8 @@ import { persistReducer } from 'redux-persist';
 const initState = {
     timer: 0,
     time: 0,
-    input: ""
+    input: "",
+    text: ""
 }
 
 const testReducer = (state = initState, action) => {
@@ -29,6 +30,11 @@ const testReducer = (state = initState, action) => {
             return {
                 ...state,
                 time: 0
+            }
+        case "SET_TEXT":
+            return {
+                ...state,
+                text: action.text
             }
         default:
             return state;
