@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { setUserInput } from '../../store/actions/testActions'
+
+
 const UserInput = () => {
     const {
         input
@@ -8,10 +10,6 @@ const UserInput = () => {
         input: state.test.input
     }), shallowEqual);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setUserInput(''))
-    }, [])
 
     return (
         <textarea

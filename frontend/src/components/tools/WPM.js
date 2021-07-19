@@ -1,20 +1,20 @@
 import React from 'react'
 import "./Tool.css"
 import { useSelector, shallowEqual } from 'react-redux';
-const WPM = () => {
+const WPM = ({ count }) => {
     const {
-        input,
-        timer,
-        time
+        totalWordCount,
+        currentWordCount
     } = useSelector(state => ({
-        input: state.test.input,
-        timer: state.test.timer,
-        time: state.test.time
+        totalWordCount: state.test.totalWordCount,
+        currentWordCount: state.test.currentWordCount
     }), shallowEqual);
 
+    let wc = totalWordCount + currentWordCount
+
     return (
-        <div className="tool-card">
-            <h1>{time > 0 && input.length > 0 && Math.floor(60 * (input.split(" ").length / time))} W/M</h1>
+        <div>
+            <h2>{count && Math.floor(60 * (wc / count))}W/M</h2>
         </div>
     )
 }

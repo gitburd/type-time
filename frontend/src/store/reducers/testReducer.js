@@ -2,39 +2,37 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 const initState = {
-    timer: 0,
-    time: 0,
+    timer: 30,
     input: "",
-    text: ""
+    text: "",
+    totalWordCount: 0,
+    currentWordCount: 0
 }
 
 const testReducer = (state = initState, action) => {
     switch (action.type) {
-        case "SET_USERINPUT":
+        case "SET_USER_INPUT":
             return {
                 ...state,
-                input: action.input
+                input: action.input,
+                currentWordCount: action.currentWordCount
             }
         case "SET_TIMER":
             return {
                 ...state,
-                timer: action.timer,
-                time: 0
-            }
-        case "SET_TIME":
-            return {
-                ...state,
-                time: action.time
-            }
-        case "RESET_TIME":
-            return {
-                ...state,
-                time: 0
+                timer: action.timer
             }
         case "SET_TEXT":
             return {
                 ...state,
-                text: action.text
+                text: action.text,
+                input: ""
+            }
+        case "SET_TOTAL_WC":
+            return {
+                ...state,
+                totalWordCount: action.totalWordCount,
+                currentWordCount: 0
             }
         default:
             return state;
@@ -47,3 +45,5 @@ const persistConfig = {
 };
 
 export default persistReducer(persistConfig, testReducer);
+
+

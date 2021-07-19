@@ -8,7 +8,7 @@ const Navbar = () => {
         store: state
     }), shallowEqual);
 
-    console.log(store)
+    // console.log(store)
     return (
         <nav>
             <ul>

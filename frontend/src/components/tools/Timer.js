@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "./Tool.css"
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import useInterval from './useInterval'
-import { setTime } from '../../store/actions/testActions'
+import { setWordCount } from '../../store/actions/testActions'
+import WPM from './WPM'
 
 const Timer = () => {
     const {
@@ -13,32 +14,37 @@ const Timer = () => {
 
     const [count, setCount] = useState(0);
     const delay = 1000;
-    const [isRunning, setIsRunning] = useState(true);
+    const [isRunning, setIsRunning] = useState(false);
     const dispatch = useDispatch();
 
     useInterval(() => {
         setCount(count + 1);
-        dispatch(setTime((count + 1)))
     }, isRunning && count < timer ? delay : null);
+
 
     function handleStopTimer() {
         setIsRunning(false);
         setCount(0);
+        dispatch(setWordCount(0))
     }
 
     function handleStartTimer() {
+        console.log("play click")
         setIsRunning(true);
         setCount(0);
     }
     return (
-        <div className="timer-container">
-            <div className="timer glow-timer">
-                {timer - count}
-            </div>
-            <div className="timer-container-footer">
-                <button onClick={handleStartTimer}>GO!</button>
-                <button onClick={handleStopTimer}>✖️</button>
-            </div>
+        <div>
+            <div className="timer-container">
+                <div className="timer glow-timer"> {/*className="timer glow - timer"*/}
+                    {timer - count}
+                </div>
+                <div className="timer-container-footer">
+                    <button onClick={handleStartTimer}>▶️</button>
+                    <button onClick={handleStopTimer}>⏹️</button>
+                </div>
+            </div >
+            <WPM count={count} />
         </div>
     );
 }

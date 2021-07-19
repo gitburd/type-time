@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { getRandomText } from '../../store/actions/testActions'
+import { getRandomText, setUserInput, updateTotalWordCount } from '../../store/actions/testActions'
 
 const TestText = () => {
     const {
@@ -16,15 +16,24 @@ const TestText = () => {
         dispatch(getRandomText())
     }, [])
 
-    // const text = { content: 'Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. Happiness is the reward we get for living to the highest right we know. hvj kubiubiu' }
-    const textLetters = text.content.split("")
+    useEffect(() => {
+        // async function updateWC() {
+        // await 
+        // }
+        if (text.content === input) {
+            dispatch(updateTotalWordCount())
+            dispatch(getRandomText())
+            dispatch(setUserInput(""))
+            // updateWC()
+        }
+    }, [input])
+    const textLetters = text.content && text.content.split("")
     const inputLetters = input.split("")
-    return (
-        <div className="quote-display">
-            {textLetters.map((letter, idx) => (
-                <span key={idx} className={idx >= inputLetters.length ? "" : letter === inputLetters[idx] ? "correct" : "incorrect"}>{letter}</span>
-            ))}
-        </div>
+    return (<div className="quote-display">
+        {textLetters && textLetters.length > 0 && textLetters.map((letter, idx) => (
+            <span key={idx} className={idx >= inputLetters.length ? "" : letter === inputLetters[idx] ? "correct" : "incorrect"}>{letter}</span>
+        ))}
+    </div>
     )
 }
 
