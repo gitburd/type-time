@@ -27,9 +27,7 @@ export const getRandomText = (category) => {
         console.log('cat', category)
         const url = category && category.dbLabel ? `https://turbotype.herokuapp.com/api/text/random?category=${category.dbLabel}` : `https://turbotype.herokuapp.com/api/text/random`
         console.log(url)
-        // if (category) {
-        //     url += `/category=${category}`
-        // }
+
         axios.get(url)
             .then(response => {
                 dispatch({ type: 'SET_TEXT', text: response.data })

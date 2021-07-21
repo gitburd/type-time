@@ -17,7 +17,7 @@ const Results = () => {
                     <li>Words Per Minute:{wordsPerMin}</li>
                     <li>Word Count: {totalWordCount}</li>
                     <li>Timer: {timer}</li>
-                    <li>Category: {category}</li>
+                    <li>Category: {category.value}</li>
                 </ul>
             </div>}
         </div>

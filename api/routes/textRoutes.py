@@ -45,6 +45,44 @@ def handle_text():
             return make_response(f"Book was not created. Title and description are required.", 400)
 
 
+@test_text_bp.route("/<text_id>", methods=["GET", "PUT", "DELETE"])
+def handle_text_by_id(text_id):
+    text = Text.query.get(text_id)
+    if not text:
+        return make_response(f"Text #{text_id} Not Found", 404)
+
+    if request.method == "GET":
+        text_response = {
+            "id": text.id,
+            "title": text.title,
+            "content": text.content,
+            "category": text.category,
+            "author": text.author
+        }
+        return make_response(text_response, 200)
+    elif request.method == "PUT":
+        form_data = request.get_json()
+
+        text.title = form_data["title"]
+        text.content = form_data["content"]
+        text.category = form_data["category"]
+        text.author = form_data["author"]
+
+        db.session.commit()
+        text_response = {
+            "id": text.id,
+            "title": text.title,
+            "content": text.content,
+            "category": text.category,
+            "author": text.author
+        }
+        return make_response(text_response, 200)
+    elif request.method == "DELETE":
+        db.session.delete(text)
+        db.session.commit()
+        return make_response(f"Text # {text.id} successfully deleted", 200)
+
+
 @test_text_bp.route("/random", methods=["GET"])
 def handle_test():
     category_query = request.args.get("category")

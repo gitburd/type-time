@@ -7,7 +7,8 @@ const initState = {
     text: "",
     totalWordCount: 0,
     currentWordCount: 0,
-    results: {}
+    results: {},
+    category: { id: 0, value: "Any", dbLabel: null, selected: false, key: "category" }
 }
 
 const testReducer = (state = initState, action) => {
