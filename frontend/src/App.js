@@ -28,19 +28,19 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div>
         <Navbar />
-        <main>
-          <Switch>
-            <Route exact path="/">
+        <Switch>
+          <Route exact path="/">
+            <main>
               <Tools />
               <Test />
-            </Route>
-            <Route path="/history">
-              <History />
-            </Route>
-          </Switch>
-        </main>
+            </main>
+          </Route>
+          <Route path="/history">
+            <History />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );

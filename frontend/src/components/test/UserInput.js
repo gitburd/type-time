@@ -5,19 +5,28 @@ import { setUserInput } from '../../store/actions/testActions'
 
 const UserInput = () => {
     const {
-        input
+        input,
+        text
     } = useSelector(state => ({
-        input: state.test.input
+        input: state.test.input,
+        text: state.test.text,
     }), shallowEqual);
     const dispatch = useDispatch();
 
     return (
-        <textarea
-            autoFocus
-            value={input}
-            onChange={(e) => dispatch(setUserInput(e.target.value))}
-            className="quote-input"
-        />
+        <div>
+            {text.content &&
+                <textarea
+                    autoFocus
+                    value={input}
+                    onChange={(e) => dispatch(setUserInput(e.target.value))}
+                    className="user-input"
+                />
+            }
+            {!text.content &&
+                <h1 id="test-area">Test Area</h1>
+            }
+        </div>
     )
 }
 

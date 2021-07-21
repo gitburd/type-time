@@ -7,13 +7,13 @@
     margin-top: 2em;
 }
 
-.quote-input{
+.user-input{
     display:block;
     background-color: white;
     border: 2px solid #a1922e;
     outline: none;
     width: 90%;
-    height: 23vh;
+    height: 40vh;
     margin: 1em auto 0;
     resize: none;
     padding: 0.5rem 1rem;
@@ -38,7 +38,7 @@
     cursor:default;
 }
 
-.quote-input:focus {
+.user-input:focus {
     border-color: black;
 }
 
@@ -58,4 +58,14 @@
 
 .test-container{
     margin-top:2em;
+}
+
+#test-area{
+    display: flex;
+	min-height: 62vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    opacity: .6;
+    font-size: 3em;
 }

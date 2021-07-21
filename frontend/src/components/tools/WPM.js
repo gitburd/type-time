@@ -5,19 +5,23 @@ const WPM = ({ count }) => {
     const {
         totalWordCount,
         currentWordCount,
-        timer
+        timer,
+        results
     } = useSelector(state => ({
         totalWordCount: state.test.totalWordCount,
         currentWordCount: state.test.currentWordCount,
-        timer: state.test.timer
+        timer: state.test.timer,
+        results: state.test.results
     }), shallowEqual);
 
-    let wc = totalWordCount + currentWordCount
+    let wc = results && results.wordsPerMin ?
+        results.wordsPerMin : count ?
+            Math.floor(60 * ((totalWordCount + currentWordCount) / count)) :
+            0
 
     return (
         <div>
-            {/* {count} */}
-            <h2>{count && count !== timer && Math.floor(60 * (wc / count))}W/M</h2>
+            <h2>{wc} Words/Minute</h2>
         </div>
     )
 }

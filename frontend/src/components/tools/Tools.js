@@ -5,27 +5,25 @@ import Results from './Results'
 import Settings from './Settings'
 
 const Tools = () => {
-    const [toolTab, setToolTab] = useState("Settings")
+    const [toolTab, setToolTab] = useState("Results")
     const onTabClick = (e) => {
         e.preventDefault()
         setToolTab(e.target.id)
     }
+    const [count, setCount] = useState(0);
 
     return (
         <div className="tools">
-            <Timer />
+            <Timer count={count} setCount={setCount} />
+            <Help />
             <div className="tools-tab-container">
                 <ul className="tools-tab">
                     <li className={toolTab === "Results" ? "active" : ""} id="Results" onClick={e => onTabClick(e)}>Results</li>
-                    <li className={toolTab === "Help" ? "active" : ""} id="Help" onClick={e => onTabClick(e)}>Help</li>
                     <li className={toolTab === "Settings" ? "active" : ""} id="Settings" onClick={e => onTabClick(e)}>⚙️</li>
                 </ul>
-
-                {toolTab === "Help" && <Help />}
                 {toolTab === "Settings" && <Settings />}
-                {toolTab === "Results" && <Results />}
+                {toolTab === "Results" && <Results count={count} />}
             </div>
-
         </div>
     )
 }

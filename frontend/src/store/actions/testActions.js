@@ -75,7 +75,7 @@ export const createTestRecod = () => {
         const results = {
             userId: 1,
             totalWordCount: totalWordCount + currentWordCount,
-            timer,
+            timer: timer.value,
             category,
             wordsPerMin
         }

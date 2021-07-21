@@ -2,7 +2,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 const initState = {
-    timer: 15,
+    timer: { id: 0, value: 30, selected: false, key: "timer" },
     input: "",
     text: "",
     totalWordCount: 0,

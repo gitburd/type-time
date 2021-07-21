@@ -11,10 +11,15 @@ h2{
 }
 
 .tools{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height:88vh;
+    margin-right: 2.5em;
+  /* margin: 2vh; */
 }
 
+.tools h2{
+    margin:.5em;
+    font-size: 1.6em;
+}
 
 .timer {
     margin: .5em auto;
@@ -79,7 +84,7 @@ h2{
 .timer-container {
     position: relative;
     height:11em;
-    /* flex-direction:column; */
+    margin-bottom: 2em;
 }
 
 .timer-container button{
@@ -105,7 +110,7 @@ h2{
     width:100%;
 }
 
-.tools-tab-container{
+.tools-tab-container, .help-container{
     border:1px solid rgb(223, 223, 223);
     padding:0;
 }
