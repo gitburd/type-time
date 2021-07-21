@@ -10,6 +10,7 @@ const Tools = () => {
         e.preventDefault()
         setToolTab(e.target.id)
     }
+
     return (
         <div className="tools">
             <Timer />
