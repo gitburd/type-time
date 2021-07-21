@@ -3,7 +3,7 @@ import "./Tool.css"
 
 const Help = () => {
     return (
-        <div className="tool-card">
+        <div>
             <h1>Help</h1>
         </div>
     )

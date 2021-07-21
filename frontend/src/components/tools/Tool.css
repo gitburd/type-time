@@ -12,7 +12,7 @@ h2{
 
 .tools{
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 
@@ -103,4 +103,83 @@ h2{
     display: flex;
     justify-content:center;
     width:100%;
+}
+
+.tools-tab-container{
+    border:1px solid rgb(223, 223, 223);
+    padding:0;
+}
+.tools-tab{
+    border-bottom:1px solid rgb(223, 223, 223);
+    padding:.2em;
+    margin:0;
+}
+
+.tools-tab ul {
+    list-style-type: none;
+    margin:0;
+}
+
+.tools-tab li {
+    display:inline;
+    margin: 0;
+    padding: 0 1em;
+    font-size: 1.5em;
+}
+
+.tools-tab li:hover {
+    cursor: pointer;
+}
+.tools-tab .active{
+    background-color: #f3efc3;
+}
+
+.dd-wrapper button{
+    width: inherit;
+    border: none;
+    background: inherit;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+}
+
+.dd-wrapper ul, .dd-wrapper li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dd-wrapper p{
+    margin: 0;
+    padding: 0;
+}
+
+.dd-wrapper{
+    position: relative;
+    width: 220px;
+    font-size: 1.6rem;
+    padding: .1em .2em;
+    margin: .3em 0;
+}
+
+.dd-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(223, 223, 223);
+    background-color: white;
+    padding: .1em .2em;
+}
+
+.dd-list{
+    padding: .1em .2em;
+    width: 100%;
+    /* max-height: 250px; */
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 0 2px 5px -1px rgb(232, 232, 232);
+    background-color: white;
+}
+
+.dd-list .dd-active{
+    background-color: #f3efc3;
 }
