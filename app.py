@@ -15,7 +15,12 @@ def create_app(test_config=None):
     app.url_map.strict_slashes = False
 
     from api.routes.textRoutes import test_text_bp
+    from api.routes.userRoutes import user_bp
+    from api.routes.testRoutes import test_bp
+
     app.register_blueprint(test_text_bp)
+    app.register_blueprint(user_bp)
+    app.register_blueprint(test_bp)
 
     @app.route('/', defaults={'path': ''})
     @app.route('/<path:path>')

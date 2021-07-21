@@ -42,7 +42,7 @@ def handle_text():
             return make_response(text_response, 201)
         except Exception as e:
             print(e)
-            return make_response(f"Book was not created. Title and description are required.", 400)
+            return make_response(f"Text was not created. Missing required fields.", 400)
 
 
 @test_text_bp.route("/<text_id>", methods=["GET", "PUT", "DELETE"])
