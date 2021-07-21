@@ -22,9 +22,15 @@ export const setWordCount = (wordCount) => {
     }
 }
 
-export const getRandomText = () => {
+export const getRandomText = (category) => {
     return (dispatch) => {
-        axios.get('https://turbotype.herokuapp.com/api/text/random')
+        console.log('cat', category)
+        const url = category && category.dbLabel ? `https://turbotype.herokuapp.com/api/text/random?category=${category.dbLabel}` : `https://turbotype.herokuapp.com/api/text/random`
+        console.log(url)
+        // if (category) {
+        //     url += `/category=${category}`
+        // }
+        axios.get(url)
             .then(response => {
                 dispatch({ type: 'SET_TEXT', text: response.data })
             }).catch(error => {
@@ -33,9 +39,15 @@ export const getRandomText = () => {
     }
 }
 
-export const getFirstRandomText = () => {
+export const getFirstRandomText = (category) => {
     return (dispatch) => {
-        axios.get('https://turbotype.herokuapp.com/api/text/random')
+        console.log('cat', category)
+        const url = category && category.dbLabel ? `https://turbotype.herokuapp.com/api/text/random?category=${category.dbLabel}` : `https://turbotype.herokuapp.com/api/text/random`
+        console.log(url)
+        // if (category) {
+        //     url += `?category=${category}`
+        // }
+        axios.get(url)
             .then(response => {
                 dispatch({ type: 'SET_FIRST_TEXT', text: response.data })
             }).catch(error => {

@@ -1,7 +1,7 @@
 from app import db
 from api.models.text import Text
 from flask import request, Blueprint, make_response, jsonify
-from sqlalchemy.sql.expression import func
+from sqlalchemy.sql.expression import func, select
 test_text_bp = Blueprint("test_text", __name__, url_prefix="/api/text")
 
 
@@ -47,8 +47,14 @@ def handle_text():
 
 @test_text_bp.route("/random", methods=["GET"])
 def handle_test():
-    textId = Text.query.order_by(func.random()).first().id
-    text = Text.query.get(textId)
+    category_query = request.args.get("category")
+    if category_query:
+        textId = Text.query.filter(Text.category.ilike(
+            f'%{category_query}%')).order_by(func.random()).first().id
+        text = Text.query.get(textId)
+    else:
+        textId = Text.query.order_by(func.random()).first().id
+        text = Text.query.get(textId)
     response = {
         "id": text.id,
         "title": text.title,

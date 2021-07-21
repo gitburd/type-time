@@ -5,10 +5,12 @@ import { getRandomText, setUserInput, updateTotalWordCount, createTestRecod } fr
 const TestText = () => {
     const {
         input,
-        text
+        text,
+        category
     } = useSelector(state => ({
         input: state.test.input,
-        text: state.test.text
+        text: state.test.text,
+        category: state.test.category
     }), shallowEqual);
     const dispatch = useDispatch();
 
@@ -23,7 +25,7 @@ const TestText = () => {
         // }
         if (text.content !== "" && text.content === input) {
             dispatch(updateTotalWordCount())
-            dispatch(getRandomText())
+            dispatch(getRandomText(category))
             dispatch(setUserInput(""))
         }
     }, [input])

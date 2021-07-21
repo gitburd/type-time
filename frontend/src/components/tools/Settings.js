@@ -22,13 +22,13 @@ const Settings = () => {
                 temp = [...timers]
                 temp.forEach((item) => item.selected = false);
                 temp[id].selected = true;
-                dispatch(setTimer(temp[id].value))
+                dispatch(setTimer(temp[id]))
                 break;
             case "category":
                 temp = [...categories]
                 temp.forEach((item) => item.selected = false);
                 temp[id].selected = true;
-                dispatch(setCategory(temp[id].value))
+                dispatch(setCategory(temp[id]))
                 break;
             default:
                 console.log("default", key)
@@ -37,7 +37,7 @@ const Settings = () => {
     return (
         <div>
             <Dropdown title={"Timer"} list={timers} header={timer} resetThenSet={resetThenSet} />
-            <Dropdown title={"Category"} list={categories} header={category} resetThenSet={resetThenSet} />
+            <Dropdown title={"Category"} list={categories} header={category.value} resetThenSet={resetThenSet} />
         </div>
     )
 }

@@ -7,9 +7,11 @@ import WPM from './WPM'
 
 const Timer = () => {
     const {
-        timer
+        timer,
+        category
     } = useSelector(state => ({
-        timer: state.test.timer
+        timer: state.test.timer,
+        category: state.test.category
     }), shallowEqual);
 
     const [count, setCount] = useState(0);
@@ -34,7 +36,7 @@ const Timer = () => {
 
     function handleStartTimer() {
         // dispatch(reset())
-        dispatch(getFirstRandomText())
+        dispatch(getFirstRandomText(category))
         setCount(0);
         setIsRunning(true);
     }
