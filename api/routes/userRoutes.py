@@ -65,7 +65,7 @@ def handle_user_tests(user_id):
         return make_response(f"User #{user_id} Not Found", 404)
 
     if request.method == "GET":
-        tests = Test.query.filter_by(user_id=user.id)
+        tests = Test.query.filter_by(user_id=user.id).order_by(Test.id.desc())
         tests_response = []
 
         for test in tests:
