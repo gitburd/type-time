@@ -3,9 +3,12 @@ import React from 'react'
 const TestRecord = ({ test }) => {
     console.log("hello?", test)
     const { create_date, category, timer, totalWordCount, wordsPerMin } = test || {};
+    let reg = /^\w+,\s\d+\s\w+(?!\d{4})/g
+    const formatedDate = create_date ? create_date.match(reg) : ""
+
     return (
         <tr>
-            <td>{create_date}</td>
+            <td>{formatedDate}</td>
             <td>{wordsPerMin}</td>
             <td>{category.value}</td>
             <td>{totalWordCount}</td>

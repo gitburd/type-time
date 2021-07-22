@@ -11,7 +11,7 @@ def handle_test():
     if request.method == "POST":
         request_body = request.get_json()
         new_test = Test(
-            create_date=datetime.datetime.utcnow(),
+            create_date=datetime.datetime.now(),
             user_id=request_body["user_id"],
             category=request_body["category"],
             timer=request_body["timer"],
