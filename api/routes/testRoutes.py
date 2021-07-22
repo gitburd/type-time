@@ -33,3 +33,26 @@ def handle_test():
         except Exception as e:
             print(e)
             return make_response(f"Test was not created. Missing required fields.", 400)
+
+
+@test_bp.route("/<test_id>", methods=["GET", "DELETE"])
+def handle_text_by_id(test_id):
+    test = Test.query.get(test_id)
+    if not test:
+        return make_response(f"Test #{test_id} Not Found", 404)
+
+    if request.method == "GET":
+        test_response = {
+            "id": test.id,
+            "user_id": test.user_id,
+            "create_date": test.create_date,
+            "category": test.category,
+            "timer": test.timer,
+            "totalWordCount": test.totalWordCount,
+            "wordsPerMin": test.wordsPerMin
+        }
+        return make_response(test_response, 200)
+    elif request.method == "DELETE":
+        db.session.delete(test)
+        db.session.commit()
+        return make_response(f"Test # {test.id} successfully deleted", 200)
