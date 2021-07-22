@@ -75,11 +75,10 @@ def handle_user_tests(user_id):
                 "category": test.category,
                 "timer": test.timer,
                 "totalWordCount": test.totalWordCount,
-                "wordsPerMin": test.wordsPerMin
+                "wordsPerMin": test.wordsPerMin,
+                "create_date": test.create_date
             })
         user_response = {
-            "id": user.id,
-            "name": user.name,
             "tests": tests_response
         }
         return make_response(jsonify(user_response), 200)

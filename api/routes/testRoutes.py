@@ -18,6 +18,7 @@ def handle_test():
             totalWordCount=request_body["totalWordCount"],
             wordsPerMin=request_body["wordsPerMin"])
         try:
+            print("c-date", new_test.create_date)
             db.session.add(new_test)
             db.session.commit()
             test_response = {
