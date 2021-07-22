@@ -2,15 +2,15 @@ import React from 'react'
 
 const TestRecord = ({ test }) => {
     console.log("hello?", test)
-    const { category, timer, totalWordCount } = test || {};
+    const { create_date, category, timer, totalWordCount, wordsPerMin } = test || {};
     return (
-        <div>
-            <ul>
-                <li>Word Count: {totalWordCount}</li>
-                <li>Timer: {timer} seconds</li>
-                <li>Category: {category.value}</li>
-            </ul>
-        </div>
+        <tr>
+            <td>{create_date}</td>
+            <td>{wordsPerMin}</td>
+            <td>{category.value}</td>
+            <td>{totalWordCount}</td>
+            <td>{timer} seconds</td>
+        </tr>
     )
 }
 

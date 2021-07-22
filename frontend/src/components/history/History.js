@@ -8,7 +8,7 @@ import './history.css'
 const History = () => {
     return (
         <section className="history">
-            <div className="history-card">
+            <div>
                 <TestResultChart />
                 <TestResultGraph />
             </div>

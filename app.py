@@ -23,13 +23,14 @@ def create_app(test_config=None):
     app.register_blueprint(test_bp)
 
     @app.route('/', defaults={'path': ''})
+    @app.route('/history', defaults={'path': '/history'})
     @app.route('/<path:path>')
     def serve(path):
+        print("path?", path)
         if path != "" and os.path.exists(app.static_folder + '/' + path):
             return send_from_directory(app.static_folder, path)
         else:
             return send_from_directory(app.static_folder, 'index.html')
-
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     if test_config is None:

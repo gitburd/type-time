@@ -16,15 +16,31 @@ const TestResultChart = () => {
     useEffect(() => {
         dispatch(getUserTests())
     }, [])
-    console.log("?", tests)
+
+
+    const tableBody = tests && tests.length > 0 ? tests.map(test => {
+        return <TestRecord key={test.id} test={test} />
+    }) : <tr>
+        <td colSpan="4"> Nothing yet</td>
+    </tr>
     return (
-        <div>
-            ...
-            <h1>TestResultChart</h1>
-            {tests && tests.length > 0 && tests.map(test => {
-                return <TestRecord key={test.id} test={test} />
-            })
-            }
+        <div style={{ margin: "3em" }}>
+            <table>
+                <thead>
+                    <tr>
+                        <th colSpan="4">Past Test Results</th>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>W/M</th>
+                        <th>Words</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableBody}
+                </tbody>
+            </table>
         </div>
     )
 }
