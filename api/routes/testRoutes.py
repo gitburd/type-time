@@ -1,3 +1,4 @@
+import datetime
 from app import db
 from api.models.test import Test
 from flask import request, Blueprint, make_response, jsonify
@@ -10,6 +11,7 @@ def handle_test():
     if request.method == "POST":
         request_body = request.get_json()
         new_test = Test(
+            create_date=datetime.datetime.utcnow(),
             user_id=request_body["user_id"],
             category=request_body["category"],
             timer=request_body["timer"],
@@ -21,6 +23,7 @@ def handle_test():
             test_response = {
                 "id": new_test.id,
                 "user_id": new_test.user_id,
+                "create_date": new_test.create_date,
                 "category": new_test.category,
                 "timer": new_test.timer,
                 "totalWordCount": new_test.totalWordCount,
