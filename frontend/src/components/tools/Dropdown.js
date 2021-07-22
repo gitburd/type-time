@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 const Dropdown = ({ title, header, resetThenSet, list }) => {
     const [isListOpen, setIsListOpen] = useState(false);
@@ -17,8 +17,25 @@ const Dropdown = ({ title, header, resetThenSet, list }) => {
         setIsListOpen(false)
     }
 
+    const handleClick = e => {
+        if (ddRef.current.contains(e.target)) {
+            return;
+        }
+        setIsListOpen(false)
+    };
+
+    useEffect(() => {
+        // add when mounted
+        document.addEventListener("mousedown", handleClick);
+        // return function to be called when unmounted
+        return () => {
+            document.removeEventListener("mousedown", handleClick);
+        };
+    }, []);
+
+    const ddRef = useRef();
     return (
-        <div className="dd-wrapper">
+        <div ref={ddRef} className="dd-wrapper">
             <p>{title}</p>
             <button
                 type="button"

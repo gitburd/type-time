@@ -10,9 +10,9 @@ const TestRecord = ({ test }) => {
         <tr>
             <td>{formatedDate}</td>
             <td>{wordsPerMin}</td>
-            <td>{category.value}</td>
             <td>{totalWordCount}</td>
-            <td>{timer} seconds</td>
+            <td>{timer} sec.</td>
+            <td>{category}</td>
         </tr>
     )
 }

@@ -13,12 +13,11 @@ h2{
 .tools{
     height:88vh;
     margin-right: 2.5em;
-  /* margin: 2vh; */
 }
 
 .tools h2{
     margin:.5em;
-    font-size: 1.6em;
+    font-size: 1.3em;
 }
 
 .timer {

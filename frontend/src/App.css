@@ -1,11 +1,13 @@
-body{margin:0;}
+body{
+  margin:0;
+  font-family: Verdana;
+}
 main {
-  padding: 3em 2em;
+  padding: 0 2em;
   margin: 1vh 0;
   display: grid;
   grid-template-columns: 1.5fr 3.5fr;
   height:80vh;
-  font-size: 1.1em;
 }
 
 .test{
@@ -17,7 +19,5 @@ main {
   background-color: #f0db4f;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  /* width: 700px; */
-  /* max-width: 90%; */
 }
 

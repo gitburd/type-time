@@ -25,16 +25,17 @@ const TestResultChart = () => {
     </tr>
     return (
         <div style={{ margin: "3em" }}>
-            <table>
+            <table class="table">
                 <thead>
                     <tr>
-                        <th colSpan="4">Past Test Results</th>
+                        <th colSpan="5" style={{ textAlign: "center", fontSize: '1.3em' }}>Past Test Results</th>
                     </tr>
                     <tr>
                         <th>Date</th>
                         <th>W/M</th>
                         <th>Words</th>
                         <th>Time</th>
+                        <th>Category</th>
                     </tr>
                 </thead>
                 <tbody>

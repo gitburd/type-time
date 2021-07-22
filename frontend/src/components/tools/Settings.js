@@ -34,7 +34,6 @@ const Settings = () => {
                 console.log("default", key)
         }
     }
-    console.log("settings", timers, timer)
     return (
         <div>
             <Dropdown title={"Timer"} list={timers} header={timer.value} resetThenSet={resetThenSet} />
