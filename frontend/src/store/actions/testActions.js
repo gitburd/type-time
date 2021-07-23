@@ -1,10 +1,14 @@
 import axios from 'axios'
 
 export const setUserInput = (input) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const text = getState().test.text.content
+        const currentKey = !text || input.length >= text.length ?
+            "" : text[input.length] === " " ?
+                "spacebar" : text[input.length]
         const formattedInput = input.replace(/\s+/g, ' ').trim();
         let cwc = formattedInput.split(" ").length;
-        dispatch({ type: 'SET_USER_INPUT', input, currentWordCount: cwc })
+        dispatch({ type: 'SET_USER_INPUT', input, currentWordCount: cwc, currentKey })
     }
 }
 
@@ -25,6 +29,7 @@ export const setWordCount = (wordCount) => {
 export const getRandomText = (category) => {
     return (dispatch) => {
         const url = category && category.dbLabel ? `https://turbotype.herokuapp.com/api/text/random?category=${category.dbLabel}` : `https://turbotype.herokuapp.com/api/text/random`
+        // const url = "https://turbotype.herokuapp.com/api/text/333"
         axios.get(url)
             .then(response => {
                 dispatch({ type: 'SET_TEXT', text: response.data })
@@ -36,6 +41,7 @@ export const getRandomText = (category) => {
 
 export const getFirstRandomText = (category) => {
     return (dispatch) => {
+        // const url = "https://turbotype.herokuapp.com/api/text/333"
         const url = category && category.dbLabel ? `https://turbotype.herokuapp.com/api/text/random?category=${category.dbLabel}` : `https://turbotype.herokuapp.com/api/text/random`
         axios.get(url)
             .then(response => {

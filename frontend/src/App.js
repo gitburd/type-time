@@ -29,11 +29,13 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/">
             <main>
-              <Tools />
+              <div>
+                <Navbar />
+                <Tools />
+              </div>
               <Test />
             </main>
           </Route>

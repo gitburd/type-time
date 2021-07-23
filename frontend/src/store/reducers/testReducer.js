@@ -8,17 +8,19 @@ const initState = {
     totalWordCount: 0,
     currentWordCount: 0,
     results: {},
-    category: { id: 0, value: "Any", dbLabel: null, selected: false, key: "category" }
+    category: { id: 0, value: "Any", dbLabel: null, selected: false, key: "category" },
+    currentKey: ''
 }
 
 const testReducer = (state = initState, action) => {
     switch (action.type) {
         case "SET_USER_INPUT":
-            console.log("SET_USER_INPUT")
+            console.log("SET_USER_INPUT ?", action.currentKey)
             return {
                 ...state,
                 input: action.input,
-                currentWordCount: action.currentWordCount
+                currentWordCount: action.currentWordCount,
+                currentKey: action.currentKey
             }
         case "SET_TIMER":
             console.log("SET_TIMER")
@@ -33,21 +35,23 @@ const testReducer = (state = initState, action) => {
                 category: action.category
             }
         case "SET_TEXT":
-            console.log("SET_TEXT")
+            console.log("SET_TEXT", action.text)
             return {
                 ...state,
                 text: action.text,
-                input: ""
+                input: "",
+                currentKey: action.text.content[0]
             }
         case "SET_FIRST_TEXT":
-            console.log("SET_FIRTS_TEXT")
+            console.log("SET_FIRTS_TEXT", action.text)
             return {
                 ...state,
                 text: action.text,
                 input: "", textinput: "",
                 totalWordCount: 0,
                 currentWordCount: 0,
-                results: {}
+                results: {},
+                currentKey: action.text.content[0]
             }
         case "SET_TOTAL_WC":
             console.log("SET_TOTAL_WC")
@@ -63,7 +67,8 @@ const testReducer = (state = initState, action) => {
                 ...state,
                 results: action.results,
                 input: "",
-                text: ""
+                text: "",
+                currentKey: ""
             }
         case "RESET":
             console.log("REST")
@@ -73,7 +78,8 @@ const testReducer = (state = initState, action) => {
                 input: "",
                 totalWordCount: 0,
                 currentWordCount: 0,
-                results: {}
+                results: {},
+                currentKey: ""
             }
         default:
             return state;

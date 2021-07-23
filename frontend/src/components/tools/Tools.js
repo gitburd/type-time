@@ -15,7 +15,6 @@ const Tools = () => {
     return (
         <div className="tools">
             <Timer count={count} setCount={setCount} />
-            <Help />
             <div className="tools-tab-container">
                 <ul className="tools-tab">
                     <li className={toolTab === "Results" ? "active" : ""} id="Results" onClick={e => onTabClick(e)}>Results</li>
@@ -24,6 +23,7 @@ const Tools = () => {
                 {toolTab === "Settings" && <Settings />}
                 {toolTab === "Results" && <Results count={count} />}
             </div>
+            <Help />
         </div>
     )
 }

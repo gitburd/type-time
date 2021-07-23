@@ -3,11 +3,11 @@ body{
   font-family: Verdana;
 }
 main {
-  padding: 0 2em;
-  margin: 1vh 0;
+  padding: 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1.5fr 3.5fr;
-  height:80vh;
+  grid-template-columns: 1.5fr 3fr;
+  height:100vh;
 }
 
 .test{

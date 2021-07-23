@@ -9270,7 +9270,7 @@
     "prompts" "2.4.0"
     "react-error-overlay" "^6.0.9"
     "recursive-readdir" "2.2.2"
-    "shell-quote" "1.7.2"
+    "shell-user-input" "1.7.2"
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
@@ -10198,9 +10198,9 @@
   "resolved" "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   "version" "3.0.0"
 
-"shell-quote@1.7.2":
+"shell-user-input@1.7.2":
   "integrity" "sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg=="
-  "resolved" "https://registry.npmjs.org/shell-quote/-/shell-quote-1.7.2.tgz"
+  "resolved" "https://registry.npmjs.org/shell-user-input/-/shell-user-input-1.7.2.tgz"
   "version" "1.7.2"
 
 "shellwords@^0.1.1":
@@ -10767,7 +10767,7 @@
     "object.values" "^1.1.0"
     "sax" "~1.2.4"
     "stable" "^0.1.8"
-    "unquote" "~1.1.1"
+    "unuser-input" "~1.1.1"
     "util.promisify" "~1.0.0"
 
 "symbol-tree@^3.2.4":
@@ -11216,9 +11216,9 @@
   "resolved" "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
   "version" "1.0.0"
 
-"unquote@~1.1.1":
+"unuser-input@~1.1.1":
   "integrity" "sha1-j97XMk7G6IoP+LkF58CYzcCG1UQ="
-  "resolved" "https://registry.npmjs.org/unquote/-/unquote-1.1.1.tgz"
+  "resolved" "https://registry.npmjs.org/unuser-input/-/unuser-input-1.1.1.tgz"
   "version" "1.1.1"
 
 "unset-value@^1.0.0":
