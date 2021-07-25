@@ -23,9 +23,6 @@ const UserInput = () => {
                     className="user-input"
                 />
             }
-            {!text.content &&
-                <h1 id="test-area">Test Area</h1>
-            }
         </div>
     )
 }

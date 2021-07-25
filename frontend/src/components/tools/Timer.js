@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import "./Tool.css"
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import useInterval from './useInterval'
-import { setWordCount, getFirstRandomText, getRandomText, createTestRecod, reset } from '../../store/actions/testActions'
-import WPM from './WPM'
+import { getFirstRandomText, createTestRecod, reset } from '../../store/actions/testActions'
 
 const Timer = ({ count, setCount }) => {
     const {
@@ -14,14 +13,12 @@ const Timer = ({ count, setCount }) => {
         category: state.test.category
     }), shallowEqual);
 
-    // const [count, setCount] = useState(0);
     const delay = 1000;
     const [isRunning, setIsRunning] = useState(false);
     const dispatch = useDispatch();
 
     useInterval(() => {
         if (count === timer.value - 1) {
-            console.log("END TIMER LOGiC HERE!")
             dispatch(createTestRecod())
         }
         setCount(count + 1);
@@ -35,7 +32,6 @@ const Timer = ({ count, setCount }) => {
     }
 
     function handleStartTimer() {
-        // dispatch(reset())
         dispatch(getFirstRandomText(category))
         setCount(0);
         setIsRunning(true);
@@ -51,7 +47,6 @@ const Timer = ({ count, setCount }) => {
                     <button onClick={handleStopTimer}>⏹️</button>
                 </div>
             </div >
-            {/* <WPM count={count} isRunning={isRunning} /> */}
         </div>
     );
 }

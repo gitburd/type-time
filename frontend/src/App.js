@@ -13,19 +13,18 @@ import Help from "./components/tools/Help"
 import WPM from "./components/tools/WPM"
 import History from './components/history/History';
 import Tools from "./components/tools/Tools"
+import Settings from "./components/tools/Settings"
 
 function App() {
   const [text, setText] = useState({})
 
-  // useEffect(() => {
-  //   axios.get('https://turbotype.herokuapp.com/api/text').then(response => {
-  //     console.log("SUCCESS", response)
-  //     setText(response)
-  //   }).catch(error => {
-  //     console.log(error)
-  //   })
-  // }, [])
+  const [showSettings, setShowSettings] = useState(false);
 
+  const toggleShowSettings = () => {
+    setShowSettings(!showSettings)
+  }
+
+  const toolComponent = showSettings ? <Settings setShowSettings={setShowSettings} /> : <Tools />
   return (
     <Router>
       <div>
@@ -33,7 +32,11 @@ function App() {
           <Route exact path="/">
             <main>
               <div>
-                <Navbar />
+                <Navbar toggleShowSettings={toggleShowSettings} />
+                {/* {toolComponent} */}
+                {showSettings &&
+                  <Settings setShowSettings={setShowSettings}
+                  />}
                 <Tools />
               </div>
               <Test />

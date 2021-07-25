@@ -1,13 +1,6 @@
 h2{
     text-align: center;
-}
-
-.tool-card{
-    padding:2em;
-    border-radius: 0.5rem;
-    margin: 1em;
-    /* box-shadow: rgba(50, 50, 93, 0.2) 0px 50px 100px -20px, rgba(0, 0, 0, 0.20) 0px 30px 60px -30px, rgba(96, 96, 96, 0.25) 0px -2px 6px 0px inset; */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(96, 96, 96, 0.35) 0px -2px 6px 0px inset;
+    margin:.5em;
 }
 
 .tools{
@@ -15,10 +8,6 @@ h2{
     padding: 0 2em;
 }
 
-.tools h2{
-    margin:.5em;
-    font-size: 1.3em;
-}
 
 .timer {
     margin: 0.5em auto;
@@ -28,7 +17,6 @@ h2{
     justify-content: center;
     align-items: center;
 }
-
 
 .glow-timer {
     width: 2em;
@@ -83,7 +71,7 @@ h2{
 .timer-container {
     position: relative;
     height:11em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .timer-container button{
@@ -109,33 +97,14 @@ h2{
     width:100%;
 }
 
-.tools-tab-container, .help-container{
+.wpm, .help-container{
     border:1px solid rgb(223, 223, 223);
     padding:0;
 }
-.tools-tab{
-    border-bottom:1px solid rgb(223, 223, 223);
-    padding:.2em;
+
+.wpm h2{
+    padding:.5em;
     margin:0;
-}
-
-.tools-tab ul {
-    list-style-type: none;
-    margin:0;
-}
-
-.tools-tab li {
-    display:inline;
-    margin: 0;
-    padding: 0 1em;
-    font-size: 1.5em;
-}
-
-.tools-tab li:hover {
-    cursor: pointer;
-}
-.tools-tab .active{
-    background-color: #f3efc3;
 }
 
 .dd-wrapper button{
@@ -158,12 +127,11 @@ h2{
     padding: 0;
 }
 
-.dd-wrapper{
+.dd-wrapper, .checkbox-wrapper, .settings-header{
     position: relative;
     width: 220px;
-    font-size: 1.6rem;
     padding: .1em .2em;
-    margin: .3em 0;
+    margin: 1em 2em;
 }
 
 .dd-header{

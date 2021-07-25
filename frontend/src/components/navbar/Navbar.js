@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import "./Navbar.css"
+import Settings from '../tools/Settings';
 
-const Navbar = () => {
+const Navbar = ({ toggleShowSettings }) => {
     const { store } = useSelector(state => ({
         store: state
     }), shallowEqual);
 
-    // console.log(store)
+
     return (
         <nav>
             <ul>
@@ -16,8 +17,12 @@ const Navbar = () => {
                     <NavLink className="navlink" to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink className="navlink" to="/">Settings</NavLink>
+                    <NavLink className="navlink" to="/history">History</NavLink>
                 </li>
+                <li>
+                    <NavLink className="navlink" to="/">Logout</NavLink>
+                </li>
+                <li className="nav-icon" onClick={toggleShowSettings}>⚙️</li>
             </ul>
         </nav>
     )

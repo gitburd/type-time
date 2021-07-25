@@ -7,20 +7,28 @@ const initState = {
     text: "",
     totalWordCount: 0,
     currentWordCount: 0,
+    totalKeyCount: 0,
+    currentKeyCount: 0,
+    totalCorrectKeyCount: 0,
+    currentCorrectKeyCount: 0,
     results: {},
     category: { id: 0, value: "Any", dbLabel: null, selected: false, key: "category" },
-    currentKey: ''
+    currentKey: '',
+    showKeyboard: true,
+    requireAccuracy: false,
 }
 
 const testReducer = (state = initState, action) => {
     switch (action.type) {
         case "SET_USER_INPUT":
-            console.log("SET_USER_INPUT ?", action.currentKey)
+            // console.log("SET_USER_INPUT ?", action)
             return {
                 ...state,
                 input: action.input,
+                currentKey: action.currentKey,
                 currentWordCount: action.currentWordCount,
-                currentKey: action.currentKey
+                currentKeyCount: action.currentKeyCount,
+                currentCorrectKeyCount: action.currentCorrectKeyCount,
             }
         case "SET_TIMER":
             console.log("SET_TIMER")
@@ -33,6 +41,18 @@ const testReducer = (state = initState, action) => {
             return {
                 ...state,
                 category: action.category
+            }
+        case "SET_SHOW_KEYBOARD":
+            console.log("SET_SHOW_KEYBOARD")
+            return {
+                ...state,
+                showKeyboard: action.showKeyboard
+            }
+        case "SET_REQUIRE_ACCURACY":
+            console.log("SET_REQUIRE_ACCURACY")
+            return {
+                ...state,
+                requireAccuracy: action.requireAccuracy
             }
         case "SET_TEXT":
             console.log("SET_TEXT", action.text)
@@ -50,15 +70,23 @@ const testReducer = (state = initState, action) => {
                 input: "", textinput: "",
                 totalWordCount: 0,
                 currentWordCount: 0,
+                totalKeyCount: 0,
+                currentKeyCount: 0,
+                totalCorrectKeyCount: 0,
+                currentCorrectKeyCount: 0,
                 results: {},
                 currentKey: action.text.content[0]
             }
-        case "SET_TOTAL_WC":
-            console.log("SET_TOTAL_WC")
+        case "SET_TOTALS":
+            console.log("SET_TOTALS")
             return {
                 ...state,
                 totalWordCount: action.totalWordCount,
-                currentWordCount: 0
+                currentWordCount: 0,
+                totalKeyCount: action.totalKeyCount,
+                // currentKeyCount: 0,
+                totalCorrectKeyCount: action.totalCorrectKeyCount,
+                // currentCorrectKeyCount: 0,
             }
         case "SET_TEST_RESULTS":
             console.log("SET_TEST_RESULTS")
@@ -68,7 +96,8 @@ const testReducer = (state = initState, action) => {
                 results: action.results,
                 input: "",
                 text: "",
-                currentKey: ""
+                currentKey: "",
+                accuracy: action.accuracy
             }
         case "RESET":
             console.log("REST")

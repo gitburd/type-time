@@ -2,21 +2,50 @@ import axios from 'axios'
 
 export const setUserInput = (input) => {
     return (dispatch, getState) => {
-        const text = getState().test.text.content
-        const currentKey = !text || input.length >= text.length ?
-            "" : text[input.length] === " " ?
-                "spacebar" : text[input.length]
+        const testState = getState().test
+        const { text } = testState
+        const currentKey = !text.content || input.length >= text.content.length ?
+            "" : text.content[input.length] === " " ?
+                "spacebar" : text.content[input.length]
         const formattedInput = input.replace(/\s+/g, ' ').trim();
         let cwc = formattedInput.split(" ").length;
-        dispatch({ type: 'SET_USER_INPUT', input, currentWordCount: cwc, currentKey })
+
+        let correctKeys = 0
+        let looplen = Math.min(text.content.length, input.length)
+        for (let i = 0; i < looplen; i++) {
+            if (text.content[i] === input[i]) {
+                correctKeys++;
+            }
+        }
+
+        dispatch({
+            type: 'SET_USER_INPUT',
+            input,
+            currentWordCount: cwc,
+            currentKey,
+            currentKeyCount: input.length || 0,
+            currentCorrectKeyCount: correctKeys
+        })
     }
 }
 
-export const updateTotalWordCount = () => {
+export const updateTotalCounts = () => {
     return (dispatch, getState) => {
-        const twc = getState().test.totalWordCount
-        const cwc = getState().test.currentWordCount
-        dispatch({ type: 'SET_TOTAL_WC', totalWordCount: twc + cwc })
+        const testState = getState().test
+        const {
+            totalWordCount,
+            currentWordCount,
+            totalKeyCount,
+            currentKeyCount,
+            totalCorrectKeyCount,
+            currentCorrectKeyCount } = testState
+
+        dispatch({
+            type: 'SET_TOTALS',
+            totalWordCount: totalWordCount || 0 + currentWordCount || 0,
+            totalKeyCount: totalKeyCount || 0 + currentKeyCount || 0,
+            totalCorrectKeyCount: totalCorrectKeyCount || 0 + currentCorrectKeyCount || 0
+        })
     }
 }
 
@@ -64,18 +93,43 @@ export const setCategory = (category) => {
     }
 }
 
+export const setShowKeyboard = (showKeyboard) => {
+    return (dispatch) => {
+        dispatch({ type: 'SET_SHOW_KEYBOARD', showKeyboard })
+    }
+}
+
+export const setRequireAccuracy = (requireAccuracy) => {
+    return (dispatch) => {
+        dispatch({ type: 'SET_REQUIRE_ACCURACY', requireAccuracy })
+    }
+}
+
 export const createTestRecod = () => {
     return (dispatch, getState) => {
         const testState = getState().test
-        const { totalWordCount, currentWordCount, timer, category } = testState
-        // do we need the current?
-        const wordsPerMin = Math.floor(60 * ((totalWordCount + currentWordCount) / timer))
+        const {
+            totalWordCount,
+            totalCorrectKeyCount,
+            totalKeyCount,
+            currentCorrectKeyCount,
+            currentKeyCount,
+            currentWordCount,
+            timer,
+            category
+        } = testState
+
+        let total = totalWordCount || 0
+        const wordsPerMin = Math.floor(60 * ((total + currentWordCount) / timer.value))
+        const accuracy = ((totalCorrectKeyCount || 0 + currentCorrectKeyCount || 0) /
+            (totalKeyCount || 0 + currentKeyCount || 0))
         const results = {
             userId: 1,
-            totalWordCount: totalWordCount + currentWordCount,
+            totalWordCount: total + currentWordCount,
             timer: timer.value,
             category,
-            wordsPerMin
+            wordsPerMin,
+            accuracy
         }
         dispatch({ type: 'SET_TEST_RESULTS', results })
     }
@@ -86,3 +140,4 @@ export const reset = () => {
         dispatch({ type: 'RESET' })
     }
 }
+
