@@ -98,7 +98,8 @@ h2{
 }
 
 .wpm, .help-container{
-    border:1px solid rgb(223, 223, 223);
+    /* border:1px solid rgb(223, 223, 223); */
+    border:1px solid #a1922e;
     padding:0;
 }
 
