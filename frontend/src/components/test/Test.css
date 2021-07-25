@@ -8,9 +8,7 @@
 }
 
 .test-area{
-    /* opacity: .9; */
     font-size: 1.3em;
-    /* text-align: center; */
     display:block;
     margin: 6em auto;
     width:80%;
@@ -79,8 +77,3 @@
     background:black;
     color:#f3efc3;
 }
-
-.test-container{
-    /* margin-top:2em; */
-}
-

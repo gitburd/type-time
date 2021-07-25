@@ -13,27 +13,34 @@ const TestResultChart = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getUserTests())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getUserTests())
+    // }, [])
+    let highest = Number.NEGATIVE_INFINITY;
 
+    for (let i = 0; i < tests.length; i++) {
+        if (tests[i].wordsPerMin > highest) {
+            highest = tests[i].wordsPerMin;
+        }
+    }
 
     const tableBody = tests && tests.length > 0 ? tests.map(test => {
-        return <TestRecord key={test.id} test={test} />
+        return <TestRecord key={test.id} test={test} highest
+            ={highest} />
     }) : <tr>
         <td colSpan="4"> Nothing yet</td>
     </tr>
+    if (!tests || tests.length === 0) {
+        return (<div></div>)
+    }
     return (
-        <div style={{ margin: "3em" }}>
-            <table class="table">
+        <div style={{ margin: "0 2em" }}>
+            <table className="table">
                 <thead>
-                    <tr>
-                        <th colSpan="5" style={{ textAlign: "center", fontSize: '1.3em' }}>Past Test Results</th>
-                    </tr>
                     <tr>
                         <th>Date</th>
                         <th>W/M</th>
-                        <th>Words</th>
+                        <th>Accuracy</th>
                         <th>Time</th>
                         <th>Category</th>
                     </tr>

@@ -14,6 +14,7 @@ import WPM from "./components/tools/WPM"
 import History from './components/history/History';
 import Tools from "./components/tools/Tools"
 import Settings from "./components/tools/Settings"
+import Achievements from "./components/history/Achievements"
 
 function App() {
   const [text, setText] = useState({})
@@ -23,8 +24,6 @@ function App() {
   const toggleShowSettings = () => {
     setShowSettings(!showSettings)
   }
-
-  const toolComponent = showSettings ? <Settings setShowSettings={setShowSettings} /> : <Tools />
   return (
     <Router>
       <div>
@@ -33,7 +32,6 @@ function App() {
             <main>
               <div>
                 <Navbar toggleShowSettings={toggleShowSettings} />
-                {/* {toolComponent} */}
                 {showSettings &&
                   <Settings setShowSettings={setShowSettings}
                   />}
@@ -43,7 +41,16 @@ function App() {
             </main>
           </Route>
           <Route path="/history">
-            <History />
+            <main>
+              <div>
+                <Navbar toggleShowSettings={toggleShowSettings} />
+                {showSettings &&
+                  <Settings setShowSettings={setShowSettings}
+                  />}
+                <Achievements />
+              </div>
+              <History />
+            </main>
           </Route>
         </Switch>
       </div>

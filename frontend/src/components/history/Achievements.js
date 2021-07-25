@@ -2,7 +2,7 @@ import React from 'react'
 
 const Achievements = () => {
     return (
-        <div className="history-card">
+        <div >
             <h1>Achievements</h1>
         </div>
     )
