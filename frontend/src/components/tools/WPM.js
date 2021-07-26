@@ -19,7 +19,7 @@ const WPM = ({ count }) => {
             Math.floor(60 * ((totalWordCount + currentWordCount) / count)) :
             0
 
-    return <h2>{wc} Words/Minute</h2>
+    return <h3>{wc} Words/Minute</h3>
 }
 
 export default WPM

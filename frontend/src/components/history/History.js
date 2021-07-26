@@ -12,7 +12,7 @@ const History = () => {
     }), shallowEqual);
     const header = tests && tests.length > 0 ? <h2>Test Records</h2> : <h2>No Results Yet</h2>
     return (
-        <section className="history">
+        <section className="history right">
 
             <div>
                 {header}

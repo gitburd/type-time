@@ -17,10 +17,10 @@ const Test = () => {
         category: state.test.category,
         results: state.test.results
     }), shallowEqual);
-    console.log("?", results)
+    // console.log("?", results)
 
     if (!text.content) {
-        return <div className="card">
+        return <div className="card right">
             <div className="test-area">
                 {results && <Results />}
                 {Object.keys(results).length === 0 && <h2>Test Area</h2>}
@@ -28,7 +28,7 @@ const Test = () => {
         </div>
     }
     return (
-        <div className="card">
+        <div className="card right">
             <TestText />
             <UserInput />
         </div>

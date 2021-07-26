@@ -1,0 +1,123 @@
+{
+    "data": {
+        "Sakura": {
+            "id": "T_001",
+            "name": "Sakura",
+            "colors": {
+                "body": "#87033e",
+                "left": "#87033e",
+                "right": "#f6c2cb",
+                "h2": "#87033e",
+                "text": "#fff",
+                "highlight": "#f6cbd1",
+                "secondaryText": "#000",
+                "link": {
+                    "text": "#fff",
+                    "opacity": 1
+                }
+            }
+        },
+        "Neo": {
+            "id": "T_002",
+            "name": "Neo",
+            "colors": {
+                "body": "#000000",
+                "left": "#000000",
+                "right": "#000000",
+                "h2": "#33ffac",
+                "text": "#ff66c3",
+                "highlight": "#b3ffe0",
+                "secondaryText": "#fff",
+                "link": {
+                    "text": "#ff66c3",
+                    "opacity": 1
+                }
+            }
+        },
+        "Material": {
+            "id": "T_003",
+            "name": "Material",
+            "colors": {
+                "body": "#500238",
+                "left": "#500238",
+                "right": "#92bdf7",
+                "h2": "#500238",
+                "text": "#92bdf7",
+                "highlight": "#c3dbf9",
+                "secondaryText": "#000000",
+                "link": {
+                    "text": "#92bdf7",
+                    "opacity": 1
+                }
+            }
+        },
+        "Mellow": {
+            "id": "T_004",
+            "name": "Mellow",
+            "colors": {
+                "body": "#fff170",
+                "left": "#FFFFFF",
+                "right": "#f3efc3",
+                "h2": "#766a23",
+                "text": "#292500",
+                "highlight": "#f3efc3",
+                "secondaryText": "#000",
+                "link": {
+                    "text": "#292500",
+                    "opacity": 1
+                }
+            }
+        },
+        "Dallas": {
+            "id": "T_005",
+            "name": "Dallas",
+            "colors": {
+                "body": "#e5944d",
+                "left": "#e5944d",
+                "right": "#669fb2",
+                "h2": "#3e2a20",
+                "text": "#3e2a20",
+                "highlight": "#f5c9a3",
+                "secondaryText": "#000",
+                "link": {
+                    "text": "#3e2a20",
+                    "opacity": 1
+                }
+            }
+        },
+        "Vogue": {
+            "id": "T_006",
+            "name": "Vogue",
+            "colors": {
+                "body": "#c62828",
+                "left": "#c62828",
+                "right": "#FFF",
+                "h2": "#c62828",
+                "text": "#ffeeed",
+                "highlight": "#ffb3b3",
+                "secondaryText": "#000000",
+                "link": {
+                    "text": "#ffeeed",
+                    "opacity": 1
+                }
+            }
+        },
+        "Waves": {
+            "id": "T_007",
+            "name": "Waves",
+            "colors": {
+                "body": "#96d4d0",
+                "left": "#96d4d0",
+                "right": "#f3efc3",
+                "h2": "#766a23",
+                "text": "#0d47a1",
+                "secondaryText": "#000",
+                "highlight": "#c9e8e8",
+                "link": {
+                    "text": "#0d47a1",
+                    "opacity": 1
+                }
+            }
+        }
+    }
+}

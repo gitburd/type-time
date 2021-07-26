@@ -3,20 +3,25 @@ import { setTimer, setCategory, setShowKeyboard, setRequireAccuracy } from '../.
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Dropdown from './Dropdown'
 import { timers, categories } from './settingOptions'
+import { selectTheme } from "../../store/actions/themeActions"
+import ThemeSelector from "../theme/ThemeSelector"
 
 const Settings = ({ setShowSettings }) => {
     const {
         timer,
         category,
         showKeyboard,
-        requireAccuracy
+        requireAccuracy,
+        themes
     } = useSelector(state => ({
         timer: state.test.timer,
         category: state.test.category,
         showKeyboard: state.test.showKeyboard,
         requireAccuracy: state.test.requireAccuracy,
+        themes: state.theme.themes,
     }), shallowEqual);
 
+    console.log("!", themes);
     const dispatch = useDispatch();
 
     const resetThenSet = (id, key) => {
@@ -63,13 +68,23 @@ const Settings = ({ setShowSettings }) => {
         }
     }
 
+    const onSelectTheme = (e, theme) => {
+        e.preventDefault()
+        console.log("select", themes.default.data[theme])
+        dispatch(selectTheme(themes.default.data[theme]))
+    }
+
+    const setSelectedTheme = (theme) => {
+        dispatch(selectTheme(theme))
+    }
     const settings = useRef();
     return (
-        <div ref={settings}>
-            <p className="settings-header">Settings <span id="settings-colse-icon">✖️</span></p>
+        <div ref={settings} className="settings">
+            <p className="settings-header">Settings <span id="settings-colse-icon">X</span></p>
             <Dropdown title={"Timer"} list={timers} header={timer.value} resetThenSet={resetThenSet} />
             <Dropdown title={"Category"} list={categories} header={category.value} resetThenSet={resetThenSet} />
-            <div>
+            <ThemeSelector setter={setSelectedTheme} />
+            <div style={{ marginBottom: '1em' }}>
                 <label className="checkbox-wrapper">
                     <input
                         checked={showKeyboard}
@@ -77,10 +92,10 @@ const Settings = ({ setShowSettings }) => {
                         type="checkbox"
                         id="showKeyboard"
                     />
-                    Show Keyboard
+                    <span>Show Keyboard</span>
                 </label>
             </div>
-            <div>
+            <div style={{ marginBottom: '2em' }}>
                 <label className="checkbox-wrapper">
                     <input
                         checked={requireAccuracy}
@@ -88,7 +103,7 @@ const Settings = ({ setShowSettings }) => {
                         type="checkbox"
                         id="requireAccuracy"
                     />
-                    Require Accuracy
+                    <span>Require Accuracy</span>
                 </label>
             </div>
         </div>

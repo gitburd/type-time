@@ -9,7 +9,6 @@ const Navbar = ({ toggleShowSettings }) => {
         store: state
     }), shallowEqual);
 
-
     return (
         <nav>
             <ul>

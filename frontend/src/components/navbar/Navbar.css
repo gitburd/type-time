@@ -1,6 +1,5 @@
 nav{
     overflow: hidden;
-    color: #333;
     text-align: left;
 }
 
@@ -14,19 +13,18 @@ nav li {
 }
   
 nav .navlink {
-    color:#766a23;
-    text-align: center;
     padding: 14px 16px;
     font-size: 1.25em;
     text-decoration: none;
 }
   
 nav .navlink:hover, .nav-icon:hover {
-    color: #a1922e;
-    /* color: #a1922e; */
     cursor: pointer;
+    opacity: .7;
 }
 
 .nav-icon{
-    font-size:1.25em;
+    font-size:1.3em;
+    float:right;
+    padding: 0 1em;
 }

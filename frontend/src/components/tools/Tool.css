@@ -1,13 +1,10 @@
 h2{
-    text-align: center;
     margin:.5em;
 }
 
 .tools{
-    /* height:88vh; */
     padding: 0 2em;
 }
-
 
 .timer {
     margin: 0.5em auto;
@@ -97,11 +94,6 @@ h2{
     width:100%;
 }
 
-.wpm, .help-container{
-    /* border:1px solid rgb(223, 223, 223); */
-    border:1px solid #a1922e;
-    padding:0;
-}
 
 .wpm h2{
     padding:.5em;
@@ -130,9 +122,22 @@ h2{
 
 .dd-wrapper, .checkbox-wrapper, .settings-header{
     position: relative;
-    width: 220px;
-    padding: .1em .2em;
-    margin: 1em 2em;
+    width: 250px;
+    /* padding: .1em .2em; */
+    /* margin: 1em 2em; */
+    display:block;
+    margin: 1em;
+}
+
+.dd-wrapper, .checkbox-wrapper{
+    font-size: 1.1em; 
+}
+.settings-header{
+    font-size: 1.3em; 
+}
+
+#settings-colse-icon{
+    float: right;
 }
 
 .dd-header{
@@ -147,15 +152,15 @@ h2{
 .dd-list{
     padding: .1em .2em;
     width: 100%;
-    /* max-height: 250px; */
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 0 2px 5px -1px rgb(232, 232, 232);
     background-color: white;
+    color:black;
 }
 
-.dd-list .dd-active{
+/* .dd-list .dd-active{
     background-color: #f3efc3;
-}
+} */
 
 /* HELP */
 * { box-sizing:border-box; }
@@ -209,8 +214,8 @@ h2{
     background:black;
 }
 
-.active-key{
+/* .active-key{
     background-color: #f3efc3;
     border: 2px solid #a1922e;
     color:black;   
-}
+} */
