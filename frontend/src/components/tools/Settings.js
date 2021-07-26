@@ -21,7 +21,6 @@ const Settings = ({ setShowSettings }) => {
         themes: state.theme.themes,
     }), shallowEqual);
 
-    console.log("!", themes);
     const dispatch = useDispatch();
 
     const resetThenSet = (id, key) => {
@@ -48,6 +47,7 @@ const Settings = ({ setShowSettings }) => {
         if (settings.current.contains(e.target) && e.target.id !== "settings-colse-icon") {
             return;
         }
+        if (e.target.id === "settings-icon") return;
         setShowSettings(false)
     };
 
@@ -70,7 +70,6 @@ const Settings = ({ setShowSettings }) => {
 
     const onSelectTheme = (e, theme) => {
         e.preventDefault()
-        console.log("select", themes.default.data[theme])
         dispatch(selectTheme(themes.default.data[theme]))
     }
 

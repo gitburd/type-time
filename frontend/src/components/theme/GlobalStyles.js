@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
     transition: all 0.50s linear;
   }
@@ -54,11 +53,12 @@ export const GlobalStyles = createGlobalStyle`
   
   .dd-list .dd-active{
     background-color: ${({ theme }) => theme.colors.highlight};
+    border: 1px solid ${({ theme }) => theme.colors.highlightOutline};
   }
 
   .active-key{
     background-color: ${({ theme }) => theme.colors.highlight};
-    border: 2px solid #a1922e;
+    border: 2px solid ${({ theme }) => theme.colors.highlightOutline};
     color:black;   
   }
 

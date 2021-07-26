@@ -12,13 +12,9 @@ import History from './components/history/History';
 import Tools from "./components/tools/Tools"
 import Settings from "./components/tools/Settings"
 import Achievements from "./components/history/Achievements"
-
 import { ThemeProvider } from "styled-components";
-// import WebFont from 'webfontloader';
 import { GlobalStyles } from './components/theme/GlobalStyles';
 import { useTheme } from './components/theme/useTheme';
-
-// import ThemeSelector from './components/theme/ThemeSelector';
 import { selectTheme } from "./store/actions/themeActions"
 
 function App() {
@@ -31,25 +27,21 @@ function App() {
   }), shallowEqual);
 
   const dispatch = useDispatch();
+
   const [showSettings, setShowSettings] = useState(false);
-
-
+  const toggleShowSettings = () => {
+    setShowSettings(!showSettings)
+  }
 
   const { theme, themeLoaded } = useTheme();
-
 
   const setSelectedTheme = (theme) => {
     dispatch(selectTheme(theme))
   }
+
   useEffect(() => {
     setSelectedTheme(theme);
   }, [themeLoaded]);
-
-
-
-  const toggleShowSettings = () => {
-    setShowSettings(!showSettings)
-  }
 
   return (
     <>
@@ -61,7 +53,7 @@ function App() {
               <Switch>
                 <Route exact path="/">
                   <main>
-                    <div>
+                    <div className="left">
                       <Navbar toggleShowSettings={toggleShowSettings} />
                       {showSettings &&
                         <Settings setShowSettings={setShowSettings}
@@ -73,7 +65,7 @@ function App() {
                 </Route>
                 <Route path="/history">
                   <main>
-                    <div>
+                    <div className="left">
                       <Navbar toggleShowSettings={toggleShowSettings} />
                       {showSettings &&
                         <Settings setShowSettings={setShowSettings}

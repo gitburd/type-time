@@ -8,7 +8,6 @@ const ThemeDropdown = ({ title, header, resetThenSet, list }) => {
     }
 
     const selectItem = (item) => {
-        // const { id, key } = item;
         resetThenSet(item)
         setIsListOpen(false)
     }
@@ -30,7 +29,7 @@ const ThemeDropdown = ({ title, header, resetThenSet, list }) => {
     }, []);
 
     const themeDdRef = useRef();
-    console.log(header)
+
     return (
         <div ref={themeDdRef} className="dd-wrapper">
             <p>{title}</p>

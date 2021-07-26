@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import _ from 'lodash';
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import React from "react";
+import { useSelector, shallowEqual } from 'react-redux';
 import ThemeDropdown from "./ThemeDropdown";
 
 // eslint-disable-next-line import/no-anonymous-default-export

@@ -10,9 +10,10 @@
                 "h2": "#87033e",
                 "text": "#fff",
                 "highlight": "#f6cbd1",
+                "highlightOutline": "#aa034c",
                 "secondaryText": "#000",
-                "incorrect": "#b30206",
-                "correct": "#026b1b",
+                "incorrect": "#970206",
+                "correct": "#0329aa",
                 "link": {
                     "text": "#fff",
                     "opacity": 1
@@ -29,11 +30,32 @@
                 "h2": "#33ffac",
                 "text": "#ff66c3",
                 "highlight": "#b3ffe0",
+                "highlightOutline": "#3fda9b",
                 "secondaryText": "#fff",
                 "incorrect": "#fd070b",
                 "correct": "#03f239",
                 "link": {
                     "text": "#ff66c3",
+                    "opacity": 1
+                }
+            }
+        },
+        "Espresso": {
+            "id": "T_008",
+            "name": "Espresso",
+            "colors": {
+                "body": "#000000",
+                "left": "#541c13",
+                "right": "#6f5239",
+                "h2": "#fdebc4",
+                "text": "#efdcd3",
+                "highlight": "#fdebc4",
+                "highlightOutline": "#f1be5b",
+                "secondaryText": "#fff",
+                "incorrect": "#ffd53d",
+                "correct": "#03f239",
+                "link": {
+                    "text": "#efdcd3",
                     "opacity": 1
                 }
             }
@@ -44,15 +66,16 @@
             "colors": {
                 "body": "#500238",
                 "left": "#500238",
-                "right": "#92bdf7",
+                "right": "#b9d5f9",
                 "h2": "#500238",
-                "text": "#92bdf7",
+                "text": "#b9d5f9",
                 "highlight": "#c3dbf9",
+                "highlightOutline": "#5086d3",
                 "secondaryText": "#000000",
-                "incorrect": "#990509",
-                "correct": "#12550c",
+                "incorrect": "#97070a",
+                "correct": "#032182",
                 "link": {
-                    "text": "#92bdf7",
+                    "text": "#b9d5f9",
                     "opacity": 1
                 }
             }
@@ -62,11 +85,12 @@
             "name": "Mellow",
             "colors": {
                 "body": "#fff170",
-                "left": "#FFFFFF",
+                "left": "#fff170",
                 "right": "#f3efc3",
                 "h2": "#766a23",
                 "text": "#292500",
                 "highlight": "#f3efc3",
+                "highlightOutline": "#d3ca5f",
                 "secondaryText": "#000",
                 "incorrect": "#b30206",
                 "correct": "#026b1b",
@@ -82,13 +106,14 @@
             "colors": {
                 "body": "#e5944d",
                 "left": "#e5944d",
-                "right": "#69d0ea",
-                "h2": "#3e2a20",
+                "right": "#96dcf2",
+                "h2": "#6f3520",
                 "text": "#3e2a20",
                 "highlight": "#f5c9a3",
+                "highlightOutline": "#dd8e4b",
                 "secondaryText": "#000",
-                "incorrect": "#990509",
-                "correct": "#12550c",
+                "incorrect": "#6e0797",
+                "correct": "#0328a5",
                 "link": {
                     "text": "#3e2a20",
                     "opacity": 1
@@ -105,6 +130,7 @@
                 "h2": "#c62828",
                 "text": "#ffeeed",
                 "highlight": "#ffb3b3",
+                "highlightOutline": "#e35e5e",
                 "secondaryText": "#000000",
                 "incorrect": "#b30206",
                 "correct": "#026b1b",
@@ -125,6 +151,7 @@
                 "text": "#0d47a1",
                 "secondaryText": "#000",
                 "highlight": "#fcf5d4",
+                "highlightOutline": "#d3ca5f",
                 "incorrect": "#b30206",
                 "correct": "#026b1b",
                 "link": {

@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-
-import _ from 'lodash';
-
+import { useSelector, shallowEqual } from 'react-redux';
 
 export const useTheme = () => {
     const {
@@ -13,12 +10,11 @@ export const useTheme = () => {
         selectedTheme: state.theme.selectedTheme
     }), shallowEqual);
 
-    const [theme, setTheme] = useState(themes.default.data.Waves);
+    const [theme, setTheme] = useState(selectedTheme);
     const [themeLoaded, setThemeLoaded] = useState(false);
 
     useEffect(() => {
-        const localTheme = selectedTheme
-        localTheme ? setTheme(localTheme) : setTheme(themes.default.data.Waves);
+        selectedTheme ? setTheme(selectedTheme) : setTheme(themes.default.data.Waves);
         setThemeLoaded(true);
     }, []);
 

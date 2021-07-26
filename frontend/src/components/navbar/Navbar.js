@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import React from 'react'
+import { useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import "./Navbar.css"
-import Settings from '../tools/Settings';
 
 const Navbar = ({ toggleShowSettings }) => {
     const { store } = useSelector(state => ({
@@ -21,7 +20,7 @@ const Navbar = ({ toggleShowSettings }) => {
                 <li>
                     <NavLink className="navlink" to="/">Logout</NavLink>
                 </li>
-                <li onClick={toggleShowSettings}>⚙️</li>
+                <li id="settings-icon" onClick={toggleShowSettings}>⚙️</li>
             </ul>
         </nav>
     )
