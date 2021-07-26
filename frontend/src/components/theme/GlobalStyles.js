@@ -71,4 +71,14 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: underline;
   }
 
+  .line{
+    color: ${({ theme }) => theme.colors.h2};
+  }
+
+  .table thead tr {
+    background-color: ${({ theme }) => theme.colors.h2};
+    color: ${({ theme }) => theme.colors.right};
+    text-align: left;
+  }
+
 `;

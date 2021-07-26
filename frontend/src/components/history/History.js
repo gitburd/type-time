@@ -1,7 +1,8 @@
-import React from 'react'
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import TestResultChart from './TestResultChart'
 import TestResultGraph from './TestResultGraph'
+import { getUserTests } from '../../store/actions/userActions'
 import './history.css'
 
 const History = () => {
@@ -11,6 +12,12 @@ const History = () => {
         tests: state.user.tests
     }), shallowEqual);
     const header = tests && tests.length > 0 ? <h2>Test Records</h2> : <h2>No Results Yet</h2>
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getUserTests())
+    }, [])
+    console.log(tests)
     return (
         <section className="history right">
 

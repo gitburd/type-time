@@ -1,21 +1,14 @@
-import React, { useEffect } from 'react'
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { getUserTests } from '../../store/actions/userActions'
+import React from 'react'
+import { useSelector, shallowEqual } from 'react-redux';
+
 import TestRecord from './TestRecord'
 const TestResultChart = () => {
     const {
-        results,
         tests
     } = useSelector(state => ({
-        results: state.test.results,
         tests: state.user.tests
     }), shallowEqual);
 
-    const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch(getUserTests())
-    // }, [])
     let highest = Number.NEGATIVE_INFINITY;
 
     for (let i = 0; i < tests.length; i++) {

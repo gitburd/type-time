@@ -9,18 +9,13 @@
     width:100%;
 }
 
-.table thead tr {
-    background-color: #766a23;
-    color: #ffffff;
-    text-align: left;
-}
-
 .table th,
 .table td {
     padding: 12px 15px;
 }
 .table tbody tr {
     border-bottom: 1px solid #dddddd;
+    color:black;
 }
 
 .table tbody tr:nth-of-type(even) {
@@ -29,10 +24,6 @@
 
 .table tbody tr:nth-of-type(odd) {
     background-color: #fff;
-}
-
-.line{
-    color:#766a23;
 }
 
 svg{
