@@ -21,7 +21,7 @@ const Navbar = ({ toggleShowSettings }) => {
                 <li>
                     <NavLink className="navlink" to="/">Logout</NavLink>
                 </li>
-                <li className="nav-icon" onClick={toggleShowSettings}>⚙️</li>
+                <li onClick={toggleShowSettings}>⚙️</li>
             </ul>
         </nav>
     )

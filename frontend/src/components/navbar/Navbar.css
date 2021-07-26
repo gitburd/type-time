@@ -5,15 +5,18 @@ nav{
 
 nav ul {
     list-style-type: none;
+    margin: 0.8em 0;
+    padding-left: 1em;
 }
   
 nav li {
     display:inline;
     line-height:1.5em;
+    margin:0;
 }
   
 nav .navlink {
-    padding: 14px 16px;
+    padding: 10px 20px 10px 0;
     font-size: 1.25em;
     text-decoration: none;
 }
