@@ -62,4 +62,13 @@ export const GlobalStyles = createGlobalStyle`
     color:black;   
   }
 
+  .correct {
+    color: ${({ theme }) => theme.colors.correct};
+  }
+
+  .incorrect {
+    color: ${({ theme }) => theme.colors.incorrect};
+    text-decoration: underline;
+  }
+
 `;

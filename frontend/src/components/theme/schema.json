@@ -11,6 +11,8 @@
                 "text": "#fff",
                 "highlight": "#f6cbd1",
                 "secondaryText": "#000",
+                "incorrect": "#b30206",
+                "correct": "#026b1b",
                 "link": {
                     "text": "#fff",
                     "opacity": 1
@@ -28,6 +30,8 @@
                 "text": "#ff66c3",
                 "highlight": "#b3ffe0",
                 "secondaryText": "#fff",
+                "incorrect": "#fd070b",
+                "correct": "#03f239",
                 "link": {
                     "text": "#ff66c3",
                     "opacity": 1
@@ -45,6 +49,8 @@
                 "text": "#92bdf7",
                 "highlight": "#c3dbf9",
                 "secondaryText": "#000000",
+                "incorrect": "#990509",
+                "correct": "#12550c",
                 "link": {
                     "text": "#92bdf7",
                     "opacity": 1
@@ -62,6 +68,8 @@
                 "text": "#292500",
                 "highlight": "#f3efc3",
                 "secondaryText": "#000",
+                "incorrect": "#b30206",
+                "correct": "#026b1b",
                 "link": {
                     "text": "#292500",
                     "opacity": 1
@@ -74,11 +82,13 @@
             "colors": {
                 "body": "#e5944d",
                 "left": "#e5944d",
-                "right": "#669fb2",
+                "right": "#69d0ea",
                 "h2": "#3e2a20",
                 "text": "#3e2a20",
                 "highlight": "#f5c9a3",
                 "secondaryText": "#000",
+                "incorrect": "#990509",
+                "correct": "#12550c",
                 "link": {
                     "text": "#3e2a20",
                     "opacity": 1
@@ -96,6 +106,8 @@
                 "text": "#ffeeed",
                 "highlight": "#ffb3b3",
                 "secondaryText": "#000000",
+                "incorrect": "#b30206",
+                "correct": "#026b1b",
                 "link": {
                     "text": "#ffeeed",
                     "opacity": 1
@@ -113,6 +125,8 @@
                 "text": "#0d47a1",
                 "secondaryText": "#000",
                 "highlight": "#c9e8e8",
+                "incorrect": "#b30206",
+                "correct": "#026b1b",
                 "link": {
                     "text": "#0d47a1",
                     "opacity": 1

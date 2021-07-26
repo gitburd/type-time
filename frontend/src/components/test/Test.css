@@ -52,17 +52,3 @@
 .user-input:focus {
     border-color: black;
 }
-
-.correct {
-    color: #026b1b;
-}
-
-.incorrect {
-    color: #b30206;
-    text-decoration: underline;
-}
-
-/* .active-letter{
-    background:black;
-    color:#f3efc3;
-} */
