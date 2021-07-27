@@ -14,6 +14,7 @@ def handle_test():
             create_date=datetime.datetime.now(),
             user_id=request_body["user_id"],
             category=request_body["category"],
+            accuracy=request_body["accuracy"],
             timer=request_body["timer"],
             totalWordCount=request_body["totalWordCount"],
             wordsPerMin=request_body["wordsPerMin"])
@@ -26,6 +27,7 @@ def handle_test():
                 "user_id": new_test.user_id,
                 "create_date": new_test.create_date,
                 "category": new_test.category,
+                "accuracy": new_test.accuracy,
                 "timer": new_test.timer,
                 "totalWordCount": new_test.totalWordCount,
                 "wordsPerMin": new_test.wordsPerMin
@@ -33,7 +35,7 @@ def handle_test():
             return make_response(test_response, 201)
         except Exception as e:
             print(e)
-            return make_response(f"Test was not created. Missing required fields.", 400)
+            return make_response(f"Test was not created. ERROR:{e}", 400)
 
 
 @test_bp.route("/<test_id>", methods=["GET", "DELETE"])
@@ -48,6 +50,7 @@ def handle_text_by_id(test_id):
             "user_id": test.user_id,
             "create_date": test.create_date,
             "category": test.category,
+            "accuracy": test.accuracy,
             "timer": test.timer,
             "totalWordCount": test.totalWordCount,
             "wordsPerMin": test.wordsPerMin
