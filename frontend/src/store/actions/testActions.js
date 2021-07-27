@@ -144,6 +144,15 @@ export const createTestRecod = () => {
     }
 }
 
+export const deleteTestRecord = (testId) => {
+    axios.delete(`https://turbotype.herokuapp.com/api/test/${testId}`)
+        .then(response => {
+            console.log("SUCCESS", response)
+        }).catch(error => {
+            console.log(error)
+        })
+}
+
 export const reset = () => {
     return (dispatch) => {
         dispatch({ type: 'RESET' })

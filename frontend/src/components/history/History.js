@@ -5,7 +5,7 @@ import TestResultGraph from './TestResultGraph'
 import { getUserTests } from '../../store/actions/userActions'
 import './history.css'
 
-const History = () => {
+const History = ({ showDelete, setShowDelete }) => {
     const {
         tests
     } = useSelector(state => ({
@@ -18,13 +18,14 @@ const History = () => {
         dispatch(getUserTests())
     }, [])
     console.log(tests)
+
+
     return (
         <section className="history right">
-
             <div>
                 {header}
-                <TestResultGraph />
-                <TestResultChart />
+                {tests && tests.length > 2 && <TestResultGraph />}
+                <TestResultChart showDelete={showDelete} setShowDelete={setShowDelete} />
             </div>
         </section>
     )

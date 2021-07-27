@@ -31,7 +31,7 @@ nav .navlink:hover, .nav-icon:hover {
     font-size:1.4em;
 }
 
-#settings-icon:hover{
+#settings-icon:hover, #del-icon:hover{
     cursor: pointer;
     opacity: .8;
 }

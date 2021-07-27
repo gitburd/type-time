@@ -210,3 +210,15 @@ h2{
 .home-row{
     background:black;
 }
+
+.delete-record{
+    text-align:center;
+    margin:1em 0;
+    font-weight: bold;
+    font-size:1.1em;
+}
+
+.delete-record:hover{
+    cursor: pointer;
+    opacity: .8;
+}
