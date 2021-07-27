@@ -123,14 +123,23 @@ export const createTestRecod = () => {
         const wordsPerMin = Math.floor(60 * ((total + currentWordCount) / timer.value))
         const accuracy = ((totalCorrectKeyCount || 0 + currentCorrectKeyCount || 0) /
             (totalKeyCount || 0 + currentKeyCount || 0))
+
         const results = {
-            userId: 1,
+            user_id: 1,
             totalWordCount: total + currentWordCount,
             timer: timer.value,
-            category,
+            category: category.value,
             wordsPerMin,
             accuracy
         }
+        axios.post('https://turbotype.herokuapp.com/api/test', results)
+            .then(response => {
+                console.log("SUCCESS", response)
+
+            }).catch(error => {
+                console.log(error)
+            })
+        results.category = category
         dispatch({ type: 'SET_TEST_RESULTS', results })
     }
 }

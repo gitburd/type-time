@@ -73,6 +73,7 @@ def handle_user_tests(user_id):
                 "id": test.id,
                 "user_id": test.user_id,
                 "category": test.category,
+                "accuracy": test.accuracy,
                 "timer": test.timer,
                 "totalWordCount": test.totalWordCount,
                 "wordsPerMin": test.wordsPerMin,

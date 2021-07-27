@@ -123,21 +123,18 @@ h2{
 .dd-wrapper, .checkbox-wrapper, .settings-header{
     position: relative;
     width: 250px;
-    /* padding: .1em .2em; */
-    /* margin: 1em 2em; */
     display:block;
     margin: 1em;
 }
 
 .dd-wrapper, .checkbox-wrapper{
-    font-size: 1.1em; 
-}
-.settings-header{
-    font-size: 1.3em; 
+    font-size: 1.1em;
+    display: block;
+    margin: 1em auto;
 }
 
-#settings-colse-icon{
-    float: right;
+.settings-header{
+    font-size: 1.3em; 
 }
 
 .dd-header{
@@ -213,9 +210,3 @@ h2{
 .home-row{
     background:black;
 }
-
-/* .active-key{
-    background-color: #f3efc3;
-    border: 2px solid #a1922e;
-    color:black;   
-} */

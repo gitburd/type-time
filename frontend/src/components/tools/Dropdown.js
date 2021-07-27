@@ -18,7 +18,7 @@ const Dropdown = ({ title, header, resetThenSet, list }) => {
     }
 
     const handleClick = e => {
-        if (ddRef.current.contains(e.target)) {
+        if (ddRef.current && ddRef.current.contains(e.target)) {
             return;
         }
         setIsListOpen(false)
@@ -36,13 +36,12 @@ const Dropdown = ({ title, header, resetThenSet, list }) => {
     const ddRef = useRef();
     return (
         <div ref={ddRef} className="dd-wrapper">
-            <p>{title}</p>
             <button
                 type="button"
                 className="dd-header"
                 onClick={toggleList}
             >
-                <div className="dd-header-title">{header}</div>
+                <div className="dd-header-title">{title}: {header}</div>
                 {isListOpen
                     ? "-"
                     : "+"}

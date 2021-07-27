@@ -13,7 +13,7 @@ const ThemeDropdown = ({ title, header, resetThenSet, list }) => {
     }
 
     const handleClick = e => {
-        if (themeDdRef.current.contains(e.target)) {
+        if (themeDdRef.current && themeDdRef.current.contains(e.target)) {
             return;
         }
         setIsListOpen(false)
@@ -32,13 +32,12 @@ const ThemeDropdown = ({ title, header, resetThenSet, list }) => {
 
     return (
         <div ref={themeDdRef} className="dd-wrapper">
-            <p>{title}</p>
             <button
                 type="button"
                 className="dd-header"
                 onClick={toggleList}
             >
-                <div className="dd-header-title">{header}</div>
+                <div className="dd-header-title">{title}: {header}</div>
                 {isListOpen
                     ? "-"
                     : "+"}

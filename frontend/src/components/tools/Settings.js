@@ -44,7 +44,7 @@ const Settings = ({ setShowSettings }) => {
     }
 
     const handleClick = e => {
-        if (settings.current.contains(e.target) && e.target.id !== "settings-colse-icon") {
+        if (settings.current.contains(e.target)) {
             return;
         }
         if (e.target.id === "settings-icon") return;
@@ -79,7 +79,6 @@ const Settings = ({ setShowSettings }) => {
     const settings = useRef();
     return (
         <div ref={settings} className="settings">
-            <p className="settings-header">Settings <span id="settings-colse-icon">X</span></p>
             <Dropdown title={"Timer"} list={timers} header={timer.value} resetThenSet={resetThenSet} />
             <Dropdown title={"Category"} list={categories} header={category.value} resetThenSet={resetThenSet} />
             <ThemeSelector setter={setSelectedTheme} />

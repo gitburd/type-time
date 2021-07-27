@@ -1,22 +1,22 @@
 nav{
     overflow: hidden;
-    text-align: left;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0.8em 0;
-    padding-left: 1em;
+    padding-left: 0;
+    margin: .8em auto;
 }
   
 nav li {
     display:inline;
-    line-height:1.5em;
+    line-height:2em;
     margin:0;
 }
   
 nav .navlink {
-    padding: 10px 20px 10px 0;
+    padding: 10px;
     font-size: 1.25em;
     text-decoration: none;
 }
@@ -26,8 +26,12 @@ nav .navlink:hover, .nav-icon:hover {
     opacity: .7;
 }
 
-.nav-icon{
-    font-size:1.3em;
-    float:right;
-    padding: 0 1em;
+#settings-icon{
+    padding-left: 1.5em; 
+    font-size:1.4em;
+}
+
+#settings-icon:hover{
+    cursor: pointer;
+    opacity: .8;
 }

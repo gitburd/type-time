@@ -67,7 +67,7 @@ const TestResultGraph = () => {
 
         svg
             .selectAll("path")
-            .data([tests])
+            .data([tests.reverse()])
             .join("path")
             .attr("class", "line")
             .attr("d", value => myLine(value))
