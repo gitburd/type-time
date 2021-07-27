@@ -6,16 +6,16 @@
             "colors": {
                 "body": "#87033e",
                 "left": "#87033e",
-                "right": "#f6c2cb",
+                "right": "#fad7de",
                 "h2": "#87033e",
-                "text": "#fff",
+                "text": "#fad7de",
                 "highlight": "#f6cbd1",
                 "highlightOutline": "#aa034c",
                 "secondaryText": "#000",
                 "incorrect": "#970206",
                 "correct": "#0329aa",
                 "link": {
-                    "text": "#fff",
+                    "text": "#fad7de",
                     "opacity": 1
                 }
             }
